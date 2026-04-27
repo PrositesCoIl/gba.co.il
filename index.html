@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>גרון שיווק | ייצור שקיות אריזה בסיטונאות לעסקים</title>
+  <meta name="description" content="גרון שיווק מייצרת ומשווקת שקיות גופיה, שקיות דליה ושקיות פסגור לעסקים, תעשייה וסיטונאים בכמויות גדולות בלבד.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#04481E">
+
+  <style>
+    :root {
+      --green-dark: #04481E;
+      --green-main: #2B6900;
+      --green-soft: #F3FCF6;
+      --yellow: #DDD500;
+      --white: #FFFFFF;
+      --black: #111111;
+      --text: #1D1D1D;
+      --muted: #4B5563;
+      --border: rgba(4, 72, 30, 0.16);
+      --shadow: 0 18px 45px rgba(4, 72, 30, 0.16);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 19px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Assistant", Arial, sans-serif;
+      font-size: 19px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--green-soft);
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 4px solid var(--yellow);
+      outline-offset: 4px;
+      border-radius: 10px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -80px;
+      right: 16px;
+      z-index: 9999;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(243, 252, 246, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+      color: var(--yellow);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      box-shadow: 0 10px 25px rgba(4, 72, 30, 0.18);
+    }
+
+    .brand-text {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-text strong {
+      font-size: 1.05rem;
+      color: var(--green-dark);
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.2;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--green-dark);
+      font-weight: 800;
+      padding: 10px 13px;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .main-nav a:hover {
+      background: var(--green-main);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 14px;
+      background: var(--green-main);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 24px;
+      height: 3px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      transform: translateY(-8px);
+    }
+
+    .menu-toggle span::after {
+      transform: translateY(5px);
+    }
+
+    .menu-open .menu-toggle span {
+      transform: rotate(45deg);
+    }
+
+    .menu-open .menu-toggle span::before {
+      transform: rotate(90deg);
+    }
+
+    .menu-open .menu-toggle span::after {
+      opacity: 0;
+    }
+
+    .hero {
+      position: relative;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(221, 213, 0, 0.22), transparent 34%),
+        radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.18), transparent 28%),
+        linear-gradient(135deg, var(--green-dark), #063718 55%, #032611);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 54px 54px;
+      opacity: 0.38;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      padding: 86px 0 68px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      background: rgba(221, 213, 0, 0.16);
+      color: var(--yellow);
+      border: 1px solid rgba(221, 213, 0, 0.45);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 5vw, 4.6rem);
+      line-height: 1.08;
+      color: var(--white);
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+      display: inline-block;
+    }
+
+    .hero-lead {
+      margin: 24px 0 0;
+      font-size: 1.12rem;
+      max-width: 760px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 19px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.58);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-panel {
+      position: relative;
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      padding: 18px;
+      color: var(--black);
+      transform: rotate(-1deg);
+    }
+
+    .hero-card img {
+      width: 100%;
+      aspect-ratio: 1 / 0.78;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 12px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      background: var(--green-soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--green-main);
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    .wholesale-strip {
+      background: var(--green-main);
+      color: var(--yellow);
+      border-top: 1px solid rgba(221, 213, 0, 0.35);
+      border-bottom: 1px solid rgba(221, 213, 0, 0.35);
+      font-weight: 950;
+      text-align: center;
+      padding: 16px;
+      letter-spacing: 0.2px;
+    }
+
+    section {
+      padding: 76px 0;
+      scroll-margin-top: 96px;
+    }
+
+    .section-head {
+      max-width: 860px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--green-main);
+      font-weight: 950;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--green-main);
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: -0.4px;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: var(--green-main);
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+
+    h4 {
+      margin: 0 0 8px;
+      color: var(--green-dark);
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-card.dark {
+      background: linear-gradient(145deg, var(--green-dark), #063718);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card.dark::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      background: rgba(221, 213, 0, 0.18);
+      left: -50px;
+      bottom: -60px;
+    }
+
+    .info-card.dark h2,
+    .info-card.dark h3,
+    .info-card.dark h4 {
+      color: var(--yellow);
+    }
+
+    .info-card.dark p,
+    .info-card.dark li {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(4, 72, 30, 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(4, 72, 30, 0.18);
+    }
+
+    .product-image {
+      background:
+        linear-gradient(135deg, rgba(243, 252, 246, 0.8), rgba(255, 255, 255, 1));
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+
+    .product-content {
+      padding: 24px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 0;
+    }
+
+    .tag {
+      background: var(--green-soft);
+      color: var(--green-dark);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-weight: 850;
+      font-size: 0.95rem;
+    }
+
+    .brand-section {
+      background: var(--white);
+      border-block: 1px solid var(--border);
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      background: var(--green-soft);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      min-height: 205px;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: var(--green-main);
+      color: var(--yellow);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    .customers {
+      background:
+        linear-gradient(135deg, rgba(4, 72, 30, 0.94), rgba(43, 105, 0, 0.92)),
+        radial-gradient(circle at 12% 24%, rgba(221, 213, 0, 0.22), transparent 35%);
+      color: var(--white);
+    }
+
+    .customers h2 {
+      color: var(--white);
+    }
+
+    .customers .section-kicker {
+      color: var(--yellow);
+    }
+
+    .logos-text {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .client-pill {
+      border: 1px solid rgba(221, 213, 0, 0.5);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-weight: 900;
+    }
+
+    .extra-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+    }
+
+    .extra-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(4, 72, 30, 0.08);
+    }
+
+    .cta-panel {
+      background:
+        linear-gradient(135deg, var(--green-dark), var(--green-main));
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta-panel::before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: rgba(221, 213, 0, 0.17);
+      left: -72px;
+      top: -80px;
+    }
+
+    .cta-panel h2 {
+      color: var(--yellow);
+      position: relative;
+    }
+
+    .cta-panel p,
+    .cta-panel .btn {
+      position: relative;
+    }
+
+    .site-footer {
+      background: #031F0E;
+      color: var(--white);
+      padding: 62px 0 34px;
+      font-size: 19px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.15fr;
+      gap: 24px;
+      align-items: start;
+      padding-bottom: 34px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .footer-col h3 {
+      color: var(--yellow);
+      margin-bottom: 14px;
+      font-size: 1.18rem;
+    }
+
+    .footer-col p,
+    .footer-col li {
+      color: rgba(255, 255, 255, 0.84);
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col a {
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .footer-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .footer-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--green-main);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 950;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .footer-btn.whatsapp {
+      background: #1F7A1F;
+    }
+
+    .footer-bottom {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .privacy-note {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      padding: 18px;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .floating-actions {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      display: grid;
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+      font-size: 1.25rem;
+      font-weight: 950;
+      color: var(--white);
+      background: var(--green-main);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .float-btn.whatsapp {
+      background: #1F7A1F;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .main-nav {
+        position: fixed;
+        inset: 82px 0 auto 0;
+        background: var(--green-dark);
+        padding: 18px;
+        display: grid;
+        gap: 8px;
+        transform: translateY(-125%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.24s ease, opacity 0.24s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .menu-open .main-nav {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .main-nav a {
+        color: var(--white);
+        border-radius: 14px;
+        padding: 14px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .hero-inner,
+      .about-grid,
+      .brand-grid,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid,
+      .feature-grid,
+      .extra-grid,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-inner {
+        padding: 64px 0 54px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      html,
+      body {
+        font-size: 19px;
+      }
+
+      .container {
+        width: min(100% - 24px, var(--container));
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-stats,
+      .products-grid,
+      .feature-grid,
+      .extra-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        transform: none;
+      }
+
+      .product-image {
+        min-height: 230px;
+      }
+
+      .product-image img {
+        height: 220px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .info-card,
+      .cta-panel {
+        padding: 22px;
+      }
+
+      .floating-actions {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .float-btn {
+        width: 54px;
+        height: 54px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content" title="דלג לתוכן המרכזי">דלג לתוכן המרכזי</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#top" title="חזרה לתחילת העמוד" aria-label="גרון שיווק - חזרה לתחילת העמוד">
+        <span class="brand-mark" aria-hidden="true">GBA</span>
+        <span class="brand-text">
+          <strong>גרון שיווק בע״מ</strong>
+          <span>ייצור ושיווק שקיות אריזה בסיטונאות</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="פתיחת תפריט ניווט" aria-controls="main-navigation" aria-expanded="false">
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav id="main-navigation" class="main-nav" role="navigation" aria-label="תפריט ראשי">
+        <a href="#about" title="מעבר לאודות גרון שיווק">אודות</a>
+        <a href="#products" title="מעבר לסוגי שקיות אריזה">סוגי שקיות</a>
+        <a href="#branding" title="מעבר למיתוג והדפסה">מיתוג והדפסה</a>
+        <a href="#industries" title="מעבר לענפי פעילות">ענפי פעילות</a>
+        <a href="#more-products" title="מעבר למוצרים נוספים">מוצרים נוספים</a>
+        <a href="#contact" title="מעבר לפרטי יצירת קשר">יצירת קשר</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">גרון שיווק פועלת מאז 1992</p>
+          <h1 id="hero-title">שקיות אריזה לעסקים, תעשייה וסיטונאים <span>בייצור מקצועי</span></h1>
+          <p class="hero-lead">
+            גרון שיווק בע״מ מתמחה בייצור, שיווק ואספקה של שקיות אריזה בכמויות גדולות בלבד:
+            שקיות גופיה, שקיות דליה ושקיות פסגור, עם אפשרויות התאמה לפי מידה, צבע, עובי, שימוש והדפסה ממותגת.
+            החברה מספקת פתרונות פלסטיקה ואריזה מתקדמים לענפי המסחר והתעשייה, תוך הקפדה על איכות, יציבות אספקה והתאמה לצורכי הלקוח העסקי.
+          </p>
+
+          <div class="hero-actions" aria-label="ניווט מהיר">
+            <a class="btn btn-primary" href="#products" title="מעבר לסקירת שקיות האריזה">לסקירת סוגי השקיות</a>
+            <a class="btn btn-outline" href="#branding" title="מעבר להסבר על הדפסה ומיתוג שקיות">מיתוג שקיות לעסק</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="תצוגת מוצר מרכזית">
+          <div class="hero-card">
+            <img src="plastic-bags-1(2).jpg" alt="שקית גופיה לבנה ממותגת לעסק בכמות סיטונאית" loading="eager">
+            <div class="hero-stats" aria-label="נתוני יתרון מרכזיים">
+              <div class="stat">
+                <strong>1992</strong>
+                <span>שנת הקמה</span>
+              </div>
+              <div class="stat">
+                <strong>3</strong>
+                <span>סוגי שקיות מרכזיים</span>
+              </div>
+              <div class="stat">
+                <strong>עד 3</strong>
+                <span>צבעי הדפסה</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wholesale-strip" role="note" aria-label="הבהרה חשובה בנושא מכירה">
+      מכירה בסיטונאות בלבד — אספקה בכמויות גדולות לעסקים, חברות, מוסדות, תעשייה ולקוחות מסחריים.
+    </div>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <article class="info-card dark">
+          <p class="section-kicker">מי אנחנו</p>
+          <h2 id="about-title">גרון שיווק — ניסיון רב בתחום הפלסטיקה וייצור הניילון</h2>
+          <p>
+            חברת גרון שיווק בע״מ מלווה לקוחות עסקיים משנת 1992 ומספקת פתרונות אריזה וניילון בהתאמה לצרכים משתנים של ענפי מסחר, תעשייה, מוסכים, יבואנים, רשתות, גופים מוסדיים ולקוחות סיטונאיים.
+            הניסיון המצטבר בתחום הפלסטיקה מאפשר לחברה להתאים את סוג השקית, המידה, עובי החומר, צבע השקית ואפשרויות ההדפסה לפי אופי השימוש בפועל.
+          </p>
+          <p>
+            עבור לקוח עסקי, שקית אריזה אינה רק מוצר משלים. היא חלק מתהליך השירות, חלק מחוויית הקנייה, חלק מהאחסון וההובלה, ולעיתים גם שטח פרסום נייד שממשיך לחשוף את שם העסק לאחר הרכישה.
+            לכן בחירת שקית מתאימה צריכה להיעשות לפי עומס, נפח, נראות, אופן נשיאה, סוג מוצר, תנאי אחסון ומסר תדמיתי.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <p class="section-kicker">גישה מקצועית</p>
+          <h2>ייצור לפי דרישה ולא מוצר מדף בלבד</h2>
+          <p>
+            גרון שיווק מספקת ללקוחותיה מגוון רחב של מוצרים איכותיים בהתאם לדרישותיהם, ועושה שימוש בחומרים ידידותיים יותר לסביבה, לרבות חומרים מתכלים או ממוחזרים בהתאם לסוג המוצר והצורך.
+            לקוחות החברה יכולים לקבל מענה רחב לייצור שקיות בגדלים שונים, צבעים שונים, עוביים שונים ואפשרות להדפסה על גבי השקית.
+          </p>
+          <ul class="check-list">
+            <li>ייצור שקיות אריזה בכמויות גדולות בלבד ללקוחות עסקיים וסיטונאיים.</li>
+            <li>אפשרות להדפסה ומיתוג לפי לוגו, צבעי מותג או סממן מסחרי.</li>
+            <li>התאמה לפי מידות, עובי, צבע, שימוש ואופי המוצר הנארז.</li>
+            <li>מענה לענפי מסחר, תעשייה, מוסכים, יבואנים, רשתות ולקוחות מוסדיים.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">שלוש קטגוריות מרכזיות</p>
+          <h2 id="products-title">שקיות אריזה לעסקים בכמויות גדולות</h2>
+          <p>
+            השקיות המרכזיות של גרון שיווק מיועדות לתת מענה למגוון רחב של שימושים: אריזת מוצרים בקופה, חלוקה ללקוח, אריזה ממותגת, אחסון מסודר, שמירה על מוצרים קטנים או אריזת פריטים לפני משלוח.
+            בכל קטגוריה ניתן לבחון גדלים שונים, צבעים, הדפסים ואפשרויות מיתוג בהתאם למפרט הלקוח.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="plastic-bags-1(2).jpg" alt="שקיות גופיה לעסקים עם אפשרות הדפסה ומיתוג" loading="lazy">
+            </div>
+            <div class="product-content">
+              <h3>שקיות גופיה</h3>
+              <p>
+                שקיות גופיה הן פתרון אריזה מוכר, נוח ושימושי לעסקים הזקוקים לשקית חזקה ונגישה לנשיאת מוצרים.
+                הן מתאימות לרשתות, חנויות, ספקים, מרכזי שירות, מחסנים ולקוחות מסחריים שצריכים שקית פונקציונלית בכמויות גדולות.
+                ניתן לייצר שקיות גופיה במידות שונות, בצבעים כמו שקוף או לבן, ובהדפסה צבעונית לפי צורך.
+              </p>
+              <p>
+                היתרון המרכזי של שקית גופיה הוא שילוב בין נוחות נשיאה, עלות תפעולית יעילה ואפשרות להפוך את השקית למוצר נראות עסקי.
+                כאשר מוסיפים לוגו, צבע מותג או מסר קצר, השקית משמשת גם ככלי תדמיתי שנמצא בתנועה עם הלקוח.
+              </p>
+              <div class="tags">
+                <span class="tag">גדלים שונים</span>
+                <span class="tag">אפשרות הדפסה</span>
+                <span class="tag">למסחר ותעשייה</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="dalia.png" alt="שקיות דליה עם ידית נשיאה והדפסה לעסק" loading="lazy">
+            </div>
+            <div class="product-content">
+              <h3>שקיות דליה</h3>
+              <p>
+                <a href="https://www.gba.co.il/product-category/packing-bags/dahlia-bags/" title="מעבר לקטגוריית שקיות דליה באתר גרון שיווק">שקיות דליה</a>
+                מתאימות לעסקים שרוצים פתרון אריזה בעל נראות ייצוגית יותר, עם אפשרות לידית נשיאה, הדפסים, צבעים והתאמה למידות שונות.
+                השקיות משמשות לאריזת מוצרים, חלוקה ללקוחות, קידום מכירות, תערוכות, נקודות מכירה, מוצרי פרסום ומיתוג עסקי.
+              </p>
+              <p>
+                ניתן להזמין שקיות דליה בצבע אחיד, עם עיטורים סטנדרטיים או עם הדפסה מותאמת של לוגו וסממן מסחרי.
+                עבור עסקים שמבקשים לשדר סדר, השקעה ונראות גבוהה יותר במעמד מסירת המוצר, שקית דליה יכולה להיות פתרון מדויק במיוחד.
+              </p>
+              <div class="tags">
+                <span class="tag">מראה ייצוגי</span>
+                <span class="tag">מיתוג עסקי</span>
+                <span class="tag">הדפסה איכותית</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="Printed-ziplock-bag.jpg" alt="שקיות פסגור שקופות עם סגירה חוזרת לאריזת מוצרים" loading="lazy">
+            </div>
+            <div class="product-content">
+              <h3>שקיות פסגור</h3>
+              <p>
+                שקיות פסגור מיועדות לאריזת פריטים קטנים, חלקים, מוצרים משלימים, אביזרים, מסמכים, דוגמאות, ציוד טכני ומוצרים שדורשים סגירה חוזרת ונוחה.
+                הן מתאימות לענפי מסחר ותעשייה רבים, שבהם חשוב לשמור על סדר, זיהוי מהיר של התכולה ושימוש חוזר בשקית.
+              </p>
+              <p>
+                גרון שיווק מייצרת ומשווקת שקיות פסגור חלקות או מודפסות במידות שונות.
+                האפשרות להתאמה לפי גודל, עובי והדפסה מאפשרת לעסק לקבל שקית שאינה רק אמצעי אחסון, אלא פתרון תפעולי שמקל על אריזה, שילוח, אחסון וניהול מלאי.
+              </p>
+              <div class="tags">
+                <span class="tag">סגירה חוזרת</span>
+                <span class="tag">חלק או מודפס</span>
+                <span class="tag">למלאי ואחסון</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="branding" class="brand-section" aria-labelledby="branding-title">
+      <div class="container">
+        <div class="brand-grid">
+          <div class="section-head">
+            <p class="section-kicker">מיתוג על גבי שקיות</p>
+            <h2 id="branding-title">שקית ממותגת היא נקודת מגע נוספת עם הלקוח</h2>
+            <p>
+              עבור עסקים שמספקים מוצרים באופן קבוע, השקית היא הרבה יותר מאריזה. היא מופיעה ברגע מסירת המוצר, נמצאת ביד של הלקוח, עוברת ממקום למקום ולעיתים נשמרת לשימוש נוסף.
+              לכן הדפסה על שקיות יכולה להפוך מוצר תפעולי לכלי פרסום פשוט, יעיל ומתמשך.
+            </p>
+            <p>
+              מיתוג שקיות מתאים לרשתות, חנויות, יבואנים, מוסכים, חברות שירות, מרכזים לוגיסטיים, מפעלים, לקוחות מוסדיים וכל עסק שמוסר מוצרים, חלקים או מארזים ללקוחותיו.
+              באמצעות בחירה נכונה של צבע השקית, מיקום הלוגו, גודל ההדפסה וסוג החומר, ניתן ליצור נראות אחידה שמחזקת את הזיהוי של העסק.
+            </p>
+          </div>
+
+          <article class="info-card">
+            <h3>מה כדאי לבדוק לפני הזמנה?</h3>
+            <ul class="check-list">
+              <li>מה המשקל והנפח שהשקית צריכה לשאת בפועל.</li>
+              <li>האם נדרשת שקית ייצוגית, שקית תפעולית או שקית לשימוש חוזר.</li>
+              <li>האם ההדפסה צריכה להיות בצבע אחד, במספר צבעים או לפי קו מותג קיים.</li>
+              <li>האם יש צורך בחומר ממוחזר, חומר מתכלה או התאמה סביבתית אחרת.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="feature-grid" aria-label="יתרונות מיתוג והדפסה">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">01</span>
+            <h4>נראות עסקית עקבית</h4>
+            <p>כאשר השקית נושאת לוגו או צבעי מותג, היא מחזקת את הזכירות של העסק בכל מפגש עם הלקוח.</p>
+          </article>
+
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">02</span>
+            <h4>התאמה לצורכי השימוש</h4>
+            <p>הבחירה במידה, עובי וסוג שקית מאפשרת להתאים את האריזה למוצר עצמו ולאופי הפעילות.</p>
+          </article>
+
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">03</span>
+            <h4>פתרון לסיטונאים</h4>
+            <p>הייצור בכמויות גדולות מתאים לעסקים שזקוקים לאספקה שוטפת ולא למלאי קטן או נקודתי.</p>
+          </article>
+
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">04</span>
+            <h4>שילוב בין תפעול לפרסום</h4>
+            <p>השקית ממלאת צורך שימושי ובו זמנית מציגה את העסק בצורה ברורה ונגישה.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="customers" aria-labelledby="industries-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">למי זה מתאים</p>
+          <h2 id="industries-title">פתרונות שקיות ופלסטיקה לענפי מסחר ותעשייה</h2>
+          <p>
+            גרון שיווק פועלת מול לקוחות עסקיים הזקוקים למענה יציב, רחב ומקצועי בתחום השקיות והניילון.
+            הפתרונות מתאימים לעסקים שמבצעים אריזה שוטפת, מסירת מוצרים, אחסון פריטים, הכנה לשילוח, חלוקה ללקוחות או מיתוג נקודת המכירה.
+            בין תחומי הפעילות ניתן למצוא תעשייה, מסחר, רכב, מוסכים, רשתות, גופים מוסדיים, יבואנים, ספקים ולקוחות סיטונאיים.
+          </p>
+          <p>
+            בין לקוחות החברה נמנים גופים וחברות מוכרים כגון משרד הבריאות, כלמוביל, לובינסקי טרייד & ליס, אלבר, אל על, סמלת ועוד.
+            שילוב של ניסיון, התאמה אישית ואפשרות לייצור בכמויות גדולות מאפשר לחברה לתת מענה לעסקים שצריכים מוצר אריזה אמין לאורך זמן.
+          </p>
+        </div>
+
+        <div class="logos-text" aria-label="דוגמאות ללקוחות">
+          <span class="client-pill">משרד הבריאות</span>
+          <span class="client-pill">כלמוביל</span>
+          <span class="client-pill">לובינסקי טרייד &amp; ליס</span>
+          <span class="client-pill">אלבר</span>
+          <span class="client-pill">אל על</span>
+          <span class="client-pill">סמלת</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="more-products" aria-labelledby="more-products-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">מעבר לשקיות אריזה</p>
+          <h2 id="more-products-title">מענה רחב למוצרי ניילון, פלסטיקה ונייר לתעשייה</h2>
+          <p>
+            לצד שקיות גופיה, שקיות דליה ושקיות פסגור, גרון שיווק מציעה מגוון מוצרים נוספים שיכולים להשלים את הצורך העסקי באריזה, כיסוי, אחסון ושימוש תעשייתי.
+            המגוון הרחב מאפשר ללקוחות לרכז פתרונות שונים אצל ספק אחד, בהתאם לדרישות הייצור, התפעול והאספקה שלהם.
+          </p>
+        </div>
+
+        <div class="extra-grid">
+          <article class="extra-card">
+            <h3>ניילון לתעשייה</h3>
+            <p>
+              פתרונות ניילון לתעשייה, לרבות ניילון לאריזה, יריעות, גלילים ופתרונות המותאמים לצרכים תפעוליים של עסקים ומפעלים.
+            </p>
+          </article>
+
+          <article class="extra-card">
+            <h3>מוצרי נייר לתעשייה</h3>
+            <p>
+              מוצרים משלימים לעסקים ותעשייה, המיועדים לסביבת עבודה, אריזה, שימוש שוטף ותפעול יום־יומי בהתאם לסוג הפעילות.
+            </p>
+          </article>
+
+          <article class="extra-card">
+            <h3>מוצרי ניילון לרכב</h3>
+            <p>
+              פתרונות ניילון וכיסוי לענף הרכב, מוסכים, יבואנים ונותני שירות, כחלק ממערך מוצרים רחב לעסקים בכמויות גדולות.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2 id="cta-title">צריכים שקיות אריזה בכמויות גדולות?</h2>
+            <p>
+              בחירת השקית הנכונה מתחילה בהבנת הצורך: מה אורזים, איך נושאים, האם נדרש מיתוג, מהי הכמות הדרושה ומהו סוג החומר המתאים.
+              גרון שיווק מספקת מענה מקצועי לעסקים, סיטונאים, תעשייה ולקוחות מוסדיים הזקוקים לפתרון אריזה מותאם ולאספקה בכמויות גדולות בלבד.
+            </p>
+            <p>ט.ל.ח</p>
+          </div>
+          <a class="btn btn-primary" href="#contact" title="מעבר לפרטי יצירת קשר בפוטר">לפרטי התקשרות</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <section class="footer-col" aria-labelledby="footer-company">
+          <h3 id="footer-company">גרון שיווק בע״מ</h3>
+          <p>
+            ייצור ושיווק שקיות אריזה, מוצרי ניילון ופתרונות פלסטיקה לעסקים, תעשייה וסיטונאים בכמויות גדולות בלבד.
+          </p>
+          <p>טלפון: 054-434-3919</p>
+          <div class="footer-actions" aria-label="כפתורי יצירת קשר">
+            <a class="footer-btn" href="tel:0544343919" title="התקשרו לגרון שיווק">התקשרו</a>
+            <a class="footer-btn whatsapp" href="https://wa.me/972544343919" title="שליחת הודעת וואטסאפ לגרון שיווק">☘ וואטסאפ</a>
+          </div>
+        </section>
+
+        <section class="footer-col" aria-labelledby="footer-products">
+          <h3 id="footer-products">מוצרים מרכזיים</h3>
+          <ul>
+            <li>שקיות גופיה לעסקים</li>
+            <li>שקיות דליה ממותגות</li>
+            <li>שקיות פסגור במידות שונות</li>
+            <li>ניילון ומוצרי אריזה לתעשייה</li>
+          </ul>
+        </section>
+
+        <section class="footer-col" aria-labelledby="footer-links">
+          <h3 id="footer-links">קישורים שימושיים</h3>
+          <ul>
+            <li><a href="#about" title="מעבר לאודות החברה">אודות החברה</a></li>
+            <li><a href="#products" title="מעבר לסוגי השקיות">סוגי השקיות</a></li>
+            <li><a href="#branding" title="מעבר למידע על מיתוג שקיות">מיתוג והדפסה</a></li>
+            <li><a href="https://www.facebook.com/geron.marketing.g.b.a/" title="מעבר לעמוד הפייסבוק של גרון שיווק">עמוד הפייסבוק של החברה</a></li>
+          </ul>
+        </section>
+
+        <section class="footer-col" aria-labelledby="footer-accessibility">
+          <h3 id="footer-accessibility">נגישות ופרטיות</h3>
+          <p>
+            הדף נבנה תוך הקפדה על היררכיית כותרות, ניגודיות צבעים, טקסט קריא, ניווט עוגנים, תיאור תמונות וקישורים עם כותרת.
+          </p>
+          <p>
+            <a title="נבנה על ידי פרוסייטס" class="" href="https://prosites.co.il/">נבנה על ידי פרוסייטס</a>
+          </p>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="privacy-note">
+          אנו מכבדים את פרטיות המשתמשים באתר זה. דף הנחיתה אינו כולל טפסי השארת פרטים ואינו אוסף מידע אישי באופן ישיר.
+          ייתכן ונעשה שימוש בכלי סטטיסטיקה וניתוח תנועה (כגון cookies) לצורך שיפור חוויית המשתמש.
+          האתר מאוחסן ומופעל באמצעות פלטפורמת github, וייתכן כי נתונים טכניים נאספים בהתאם למדיניות הפלטפורמה.
+          ניתן לעיין במדיניות הפרטיות של github בקישור הבא:
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" title="מעבר למדיניות הפרטיות של GitHub">מדיניות הפרטיות של GitHub</a>.
+        </div>
+
+        <p>נבנה עם היררכיית כותרות, קישורי עוגן, ALT לתמונות, TITLE לקישורים, גודל טקסט מינימלי של 18px וניגודיות משופרת.</p>
+        <p>© כל הזכויות שמורות לגרון שיווק בע״מ. ט.ל.ח</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-actions" aria-label="כפתורי יצירת קשר צפים">
+    <a class="float-btn" href="tel:0544343919" title="התקשרו לגרון שיווק" aria-label="התקשרו לגרון שיווק">☎</a>
+    <a class="float-btn whatsapp" href="https://wa.me/972544343919" title="שליחת הודעת וואטסאפ לגרון שיווק" aria-label="שליחת הודעת וואטסאפ לגרון שיווק">☘</a>
+  </div>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#main-navigation");
+    const navLinks = document.querySelectorAll("#main-navigation a");
+
+    function closeMenu() {
+      document.body.classList.remove("menu-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "פתיחת תפריט ניווט");
+    }
+
+    function toggleMenu() {
+      const isOpen = document.body.classList.toggle("menu-open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "סגירת תפריט ניווט" : "פתיחת תפריט ניווט");
+    }
+
+    menuButton.addEventListener("click", toggleMenu);
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedInsideNav = nav.contains(event.target);
+      const clickedButton = menuButton.contains(event.target);
+
+      if (!clickedInsideNav && !clickedButton && document.body.classList.contains("menu-open")) {
+        closeMenu();
+      }
+    });
+  </script>
+</body>
+</html>
