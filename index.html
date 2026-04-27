@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>גרון שיווק | ייצור שקיות אריזה בסיטונאות לעסקים</title>
-  <meta name="description" content="גרון שיווק מייצרת ומשווקת שקיות גופיה, שקיות דליה ושקיות פסגור לעסקים, תעשייה וסיטונאים בכמויות גדולות בלבד.">
+  <title>גרון שיווק | שקיות אריזה בסיטונאות לעסקים</title>
+  <meta name="description" content="גרון שיווק מספקת שקיות גופיה, שקיות דליה ושקיות פסגור לעסקים, תעשייה וסיטונאים בכמויות גדולות בלבד.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#04481E">
 
@@ -15,16 +15,16 @@
       --green-main: #2B6900;
       --green-soft: #F3FCF6;
       --yellow: #DDD500;
-      --white: #FFFFFF;
+      --white: #ffffff;
       --black: #111111;
-      --text: #1D1D1D;
-      --muted: #4B5563;
-      --border: rgba(4, 72, 30, 0.16);
-      --shadow: 0 18px 45px rgba(4, 72, 30, 0.16);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --container: 1180px;
+      --text: #1d1d1d;
+      --muted: #4b5563;
+      --line: rgba(4, 72, 30, 0.16);
+      --shadow: 0 18px 44px rgba(4, 72, 30, 0.16);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1160px;
     }
 
     * {
@@ -58,32 +58,32 @@
 
     a {
       color: inherit;
-      text-decoration-thickness: 2px;
       text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
     }
 
     a:focus-visible,
     button:focus-visible {
       outline: 4px solid var(--yellow);
       outline-offset: 4px;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     .skip-link {
       position: absolute;
-      top: -80px;
-      right: 16px;
+      top: -90px;
+      right: 18px;
       z-index: 9999;
       background: var(--yellow);
       color: var(--black);
       padding: 12px 18px;
       border-radius: 12px;
-      font-weight: 800;
-      transition: top 0.2s ease;
+      font-weight: 900;
+      text-decoration: none;
     }
 
     .skip-link:focus {
-      top: 16px;
+      top: 18px;
     }
 
     .container {
@@ -95,9 +95,9 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(243, 252, 246, 0.94);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(243, 252, 246, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
     }
 
     .header-inner {
@@ -113,52 +113,52 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
+      color: var(--green-dark);
     }
 
     .brand-mark {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border-radius: 16px;
-      background: linear-gradient(135deg, var(--green-main), var(--green-dark));
-      color: var(--yellow);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-      box-shadow: 0 10px 25px rgba(4, 72, 30, 0.18);
+      background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+      color: var(--yellow);
+      font-weight: 950;
+      letter-spacing: 0.4px;
+      box-shadow: 0 10px 24px rgba(4, 72, 30, 0.22);
     }
 
     .brand-text {
       display: grid;
-      gap: 2px;
+      gap: 1px;
+      line-height: 1.2;
     }
 
     .brand-text strong {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: var(--green-dark);
-      line-height: 1.2;
     }
 
     .brand-text span {
       font-size: 0.95rem;
       color: var(--muted);
-      line-height: 1.2;
     }
 
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
     }
 
     .main-nav a {
       text-decoration: none;
       color: var(--green-dark);
-      font-weight: 800;
+      font-weight: 900;
       padding: 10px 13px;
       border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      transition: 0.2s ease;
     }
 
     .main-nav a:hover {
@@ -169,27 +169,27 @@
 
     .menu-toggle {
       display: none;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border: 0;
       border-radius: 14px;
       background: var(--green-main);
       color: var(--white);
       cursor: pointer;
+      align-items: center;
+      justify-content: center;
     }
 
     .menu-toggle span,
     .menu-toggle span::before,
     .menu-toggle span::after {
       display: block;
-      width: 24px;
+      width: 25px;
       height: 3px;
       border-radius: 999px;
       background: currentColor;
-      transition: transform 0.2s ease, opacity 0.2s ease;
       content: "";
+      transition: 0.2s ease;
     }
 
     .menu-toggle span::before {
@@ -214,12 +214,12 @@
 
     .hero {
       position: relative;
-      background:
-        radial-gradient(circle at 12% 20%, rgba(221, 213, 0, 0.22), transparent 34%),
-        radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.18), transparent 28%),
-        linear-gradient(135deg, var(--green-dark), #063718 55%, #032611);
-      color: var(--white);
       overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 12% 20%, rgba(221, 213, 0, 0.22), transparent 32%),
+        radial-gradient(circle at 82% 16%, rgba(255, 255, 255, 0.14), transparent 28%),
+        linear-gradient(135deg, var(--green-dark), #063718 58%, #021f0d);
     }
 
     .hero::before {
@@ -227,54 +227,73 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
       background-size: 54px 54px;
-      opacity: 0.38;
+      opacity: 0.45;
       pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
-      padding: 86px 0 68px;
+      padding: 82px 0 72px;
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 46px;
       align-items: center;
     }
 
     .eyebrow {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
       width: fit-content;
-      background: rgba(221, 213, 0, 0.16);
-      color: var(--yellow);
-      border: 1px solid rgba(221, 213, 0, 0.45);
-      padding: 8px 14px;
+      margin: 0 0 18px;
+      padding: 8px 15px;
       border-radius: 999px;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(2.35rem, 5vw, 4.6rem);
-      line-height: 1.08;
-      color: var(--white);
-      letter-spacing: -1px;
-    }
-
-    .hero h1 span {
       color: var(--yellow);
-      display: inline-block;
+      background: rgba(221, 213, 0, 0.13);
+      border: 1px solid rgba(221, 213, 0, 0.42);
+      font-weight: 950;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.18;
+    }
+
+    h1 {
+      max-width: 800px;
+      color: var(--white);
+      font-size: clamp(2.25rem, 5vw, 4.25rem);
+      letter-spacing: -0.7px;
+    }
+
+    h1 span {
+      color: var(--yellow);
+    }
+
+    h2 {
+      color: var(--green-main);
+      font-size: clamp(1.85rem, 3.2vw, 3rem);
+      letter-spacing: -0.35px;
+    }
+
+    h3 {
+      color: var(--green-main);
+      font-size: 1.42rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin: 0 0 18px;
     }
 
     .hero-lead {
-      margin: 24px 0 0;
-      font-size: 1.12rem;
       max-width: 760px;
-      color: rgba(255, 255, 255, 0.92);
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.93);
+      font-size: 1.08rem;
     }
 
     .hero-actions {
@@ -285,18 +304,18 @@
     }
 
     .btn {
+      min-height: 54px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 52px;
+      gap: 9px;
       padding: 13px 22px;
       border-radius: 999px;
       border: 2px solid transparent;
       text-decoration: none;
-      font-weight: 900;
+      font-weight: 950;
       font-size: 19px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: 0.2s ease;
     }
 
     .btn:hover {
@@ -310,164 +329,90 @@
     }
 
     .btn-outline {
-      border-color: rgba(255, 255, 255, 0.58);
       color: var(--white);
+      border-color: rgba(255, 255, 255, 0.58);
       background: rgba(255, 255, 255, 0.08);
     }
 
-    .hero-panel {
+    .hero-visual {
       position: relative;
-      display: grid;
-      gap: 16px;
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-xl);
       padding: 18px;
-      color: var(--black);
+      box-shadow: 0 24px 62px rgba(0, 0, 0, 0.28);
       transform: rotate(-1deg);
     }
 
-    .hero-card img {
+    .hero-visual img {
       width: 100%;
-      aspect-ratio: 1 / 0.78;
+      aspect-ratio: 1 / 0.82;
       object-fit: contain;
-      background: #ffffff;
-      border-radius: 22px;
-      padding: 12px;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .stat {
-      background: var(--green-soft);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--green-main);
-      font-size: 1.25rem;
-      line-height: 1.2;
-    }
-
-    .stat span {
-      display: block;
-      color: var(--muted);
-      font-weight: 800;
-      font-size: 0.95rem;
-      line-height: 1.35;
+      border-radius: 23px;
+      background: var(--white);
     }
 
     .wholesale-strip {
       background: var(--green-main);
       color: var(--yellow);
-      border-top: 1px solid rgba(221, 213, 0, 0.35);
-      border-bottom: 1px solid rgba(221, 213, 0, 0.35);
       font-weight: 950;
       text-align: center;
       padding: 16px;
-      letter-spacing: 0.2px;
+      border-top: 1px solid rgba(221, 213, 0, 0.35);
+      border-bottom: 1px solid rgba(221, 213, 0, 0.35);
     }
 
     section {
-      padding: 76px 0;
+      padding: 72px 0;
       scroll-margin-top: 96px;
     }
 
     .section-head {
-      max-width: 860px;
+      max-width: 880px;
       margin-bottom: 34px;
     }
 
     .section-kicker {
+      margin: 0 0 8px;
       color: var(--green-main);
       font-weight: 950;
-      margin: 0 0 8px;
     }
 
-    h2 {
-      margin: 0;
-      color: var(--green-main);
-      font-size: clamp(1.9rem, 3vw, 3rem);
-      line-height: 1.18;
-      letter-spacing: -0.4px;
-    }
-
-    h3 {
-      margin: 0 0 12px;
-      color: var(--green-main);
-      font-size: 1.45rem;
-      line-height: 1.25;
-    }
-
-    h4 {
-      margin: 0 0 8px;
-      color: var(--green-dark);
-      font-size: 1.12rem;
-      line-height: 1.35;
-    }
-
-    p {
-      margin: 0 0 18px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .info-card {
+    .content-card {
       background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 32px;
       box-shadow: var(--shadow);
     }
 
-    .info-card.dark {
-      background: linear-gradient(145deg, var(--green-dark), #063718);
+    .about-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .highlight-card {
+      background:
+        radial-gradient(circle at 10% 12%, rgba(221, 213, 0, 0.16), transparent 34%),
+        linear-gradient(145deg, var(--green-dark), #063718);
       color: var(--white);
-      position: relative;
-      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      min-height: 100%;
     }
 
-    .info-card.dark::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 999px;
-      background: rgba(221, 213, 0, 0.18);
-      left: -50px;
-      bottom: -60px;
-    }
-
-    .info-card.dark h2,
-    .info-card.dark h3,
-    .info-card.dark h4 {
+    .highlight-card h2,
+    .highlight-card h3 {
       color: var(--yellow);
     }
 
-    .info-card.dark p,
-    .info-card.dark li {
-      color: rgba(255, 255, 255, 0.9);
+    .highlight-card p {
+      color: rgba(255, 255, 255, 0.91);
     }
 
-    .check-list {
+    .simple-list {
       list-style: none;
       padding: 0;
       margin: 22px 0 0;
@@ -475,209 +420,171 @@
       gap: 12px;
     }
 
-    .check-list li {
+    .simple-list li {
       display: grid;
       grid-template-columns: 30px 1fr;
       gap: 10px;
       align-items: start;
     }
 
-    .check-list li::before {
+    .simple-list li::before {
       content: "✓";
       width: 30px;
       height: 30px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
       background: var(--yellow);
       color: var(--black);
+      border-radius: 999px;
       font-weight: 950;
       line-height: 1;
     }
 
-    .products-grid {
+    .products {
+      background: var(--white);
+      border-block: 1px solid var(--line);
+    }
+
+    .product-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .product-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: 0 14px 35px rgba(4, 72, 30, 0.1);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    .product-item {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(243, 252, 246, 0.72), rgba(255, 255, 255, 1));
+      box-shadow: 0 12px 30px rgba(4, 72, 30, 0.08);
     }
 
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 48px rgba(4, 72, 30, 0.18);
+    .product-item:nth-child(even) {
+      grid-template-columns: 1fr 310px;
+    }
+
+    .product-item:nth-child(even) .product-image {
+      order: 2;
     }
 
     .product-image {
-      background:
-        linear-gradient(135deg, rgba(243, 252, 246, 0.8), rgba(255, 255, 255, 1));
-      min-height: 280px;
+      min-height: 250px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 18px;
-      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      border: 1px solid rgba(4, 72, 30, 0.1);
+      border-radius: 24px;
+      padding: 14px;
     }
 
     .product-image img {
       width: 100%;
-      height: 250px;
+      height: 230px;
       object-fit: contain;
       border-radius: 18px;
-    }
-
-    .product-content {
-      padding: 24px;
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 16px 0 0;
+      margin-top: 16px;
     }
 
     .tag {
-      background: var(--green-soft);
-      color: var(--green-dark);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 6px 11px;
-      font-weight: 850;
-      font-size: 0.95rem;
-    }
-
-    .brand-section {
-      background: var(--white);
-      border-block: 1px solid var(--border);
-    }
-
-    .brand-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .feature {
-      background: var(--green-soft);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 22px;
-      min-height: 205px;
-    }
-
-    .feature-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 15px;
-      background: var(--green-main);
-      color: var(--yellow);
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      font-weight: 950;
-      margin-bottom: 14px;
-    }
-
-    .customers {
-      background:
-        linear-gradient(135deg, rgba(4, 72, 30, 0.94), rgba(43, 105, 0, 0.92)),
-        radial-gradient(circle at 12% 24%, rgba(221, 213, 0, 0.22), transparent 35%);
-      color: var(--white);
-    }
-
-    .customers h2 {
-      color: var(--white);
-    }
-
-    .customers .section-kicker {
-      color: var(--yellow);
-    }
-
-    .logos-text {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .client-pill {
-      border: 1px solid rgba(221, 213, 0, 0.5);
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--white);
+      min-height: 36px;
+      padding: 6px 12px;
       border-radius: 999px;
-      padding: 10px 15px;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      border: 1px solid var(--line);
       font-weight: 900;
     }
 
-    .extra-grid {
+    .two-cols {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 18px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 26px;
+      align-items: start;
     }
 
-    .extra-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 30px rgba(4, 72, 30, 0.08);
-    }
-
-    .cta-panel {
-      background:
-        linear-gradient(135deg, var(--green-dark), var(--green-main));
+    .green-panel {
+      background: var(--green-dark);
       color: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 34px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 22px;
-      align-items: center;
+      border-radius: var(--radius-xl);
+      padding: 30px;
       box-shadow: var(--shadow);
-      overflow: hidden;
       position: relative;
+      overflow: hidden;
     }
 
-    .cta-panel::before {
+    .green-panel::after {
       content: "";
       position: absolute;
       width: 210px;
       height: 210px;
-      border-radius: 50%;
-      background: rgba(221, 213, 0, 0.17);
-      left: -72px;
-      top: -80px;
+      border-radius: 999px;
+      left: -70px;
+      bottom: -90px;
+      background: rgba(221, 213, 0, 0.16);
     }
 
-    .cta-panel h2 {
+    .green-panel h2,
+    .green-panel h3 {
       color: var(--yellow);
       position: relative;
     }
 
-    .cta-panel p,
-    .cta-panel .btn {
+    .green-panel p,
+    .green-panel ul {
       position: relative;
+      color: rgba(255, 255, 255, 0.91);
+    }
+
+    .clients {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .client-pill {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      border: 1px solid var(--line);
+      font-weight: 950;
+    }
+
+    .more-products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .mini-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--green-soft);
+      border: 1px solid var(--line);
+    }
+
+    .mini-card h3 {
+      font-size: 1.22rem;
     }
 
     .site-footer {
-      background: #031F0E;
+      background: #031f0e;
       color: var(--white);
       padding: 62px 0 34px;
       font-size: 19px;
@@ -685,17 +592,16 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr 1.15fr;
+      grid-template-columns: 1.25fr 1fr 1fr 1.1fr;
       gap: 24px;
-      align-items: start;
       padding-bottom: 34px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.16);
     }
 
     .footer-col h3 {
       color: var(--yellow);
+      font-size: 1.2rem;
       margin-bottom: 14px;
-      font-size: 1.18rem;
     }
 
     .footer-col p,
@@ -712,7 +618,7 @@
 
     .footer-col a {
       color: var(--white);
-      font-weight: 800;
+      font-weight: 850;
     }
 
     .footer-actions {
@@ -722,11 +628,11 @@
     }
 
     .footer-btn {
+      min-height: 52px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      min-height: 50px;
       padding: 12px 16px;
       border-radius: 999px;
       background: var(--green-main);
@@ -737,22 +643,23 @@
     }
 
     .footer-btn.whatsapp {
-      background: #1F7A1F;
+      background: #1f7a1f;
+    }
+
+    .privacy-note {
+      margin-top: 28px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.86);
     }
 
     .footer-bottom {
       display: grid;
-      gap: 12px;
-      margin-top: 28px;
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .privacy-note {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 20px;
-      padding: 18px;
-      color: rgba(255, 255, 255, 0.86);
+      gap: 10px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.76);
     }
 
     .floating-actions {
@@ -772,28 +679,16 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
-      font-size: 1.25rem;
-      font-weight: 950;
-      color: var(--white);
       background: var(--green-main);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
       border: 2px solid rgba(255, 255, 255, 0.5);
+      font-weight: 950;
+      font-size: 1.25rem;
     }
 
     .float-btn.whatsapp {
-      background: #1F7A1F;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
+      background: #1f7a1f;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -802,8 +697,8 @@
       *::after {
         animation-duration: 0.001ms !important;
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
         transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
       }
     }
 
@@ -815,15 +710,15 @@
       .main-nav {
         position: fixed;
         inset: 82px 0 auto 0;
-        background: var(--green-dark);
-        padding: 18px;
         display: grid;
         gap: 8px;
+        padding: 18px;
+        background: var(--green-dark);
         transform: translateY(-125%);
         opacity: 0;
         pointer-events: none;
         transition: transform 0.24s ease, opacity 0.24s ease;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
       }
 
       .menu-open .main-nav {
@@ -840,21 +735,23 @@
       }
 
       .hero-inner,
-      .about-grid,
-      .brand-grid,
-      .cta-panel {
+      .about-layout,
+      .two-cols {
         grid-template-columns: 1fr;
       }
 
-      .products-grid,
-      .feature-grid,
-      .extra-grid,
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
+      .product-item,
+      .product-item:nth-child(even) {
+        grid-template-columns: 1fr;
       }
 
-      .hero-inner {
-        padding: 64px 0 54px;
+      .product-item:nth-child(even) .product-image {
+        order: 0;
+      }
+
+      .more-products,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -872,41 +769,44 @@
         display: none;
       }
 
-      .hero-actions {
-        align-items: stretch;
+      .hero-inner {
+        padding: 58px 0 52px;
       }
 
+      .hero-visual {
+        transform: none;
+      }
+
+      .hero-actions,
       .btn {
         width: 100%;
       }
 
-      .hero-stats,
-      .products-grid,
-      .feature-grid,
-      .extra-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
+      section {
+        padding: 54px 0;
       }
 
-      .hero-card {
-        transform: none;
+      .content-card,
+      .highlight-card,
+      .green-panel {
+        padding: 22px;
+      }
+
+      .product-item {
+        padding: 18px;
       }
 
       .product-image {
-        min-height: 230px;
+        min-height: 220px;
       }
 
       .product-image img {
-        height: 220px;
+        height: 205px;
       }
 
-      section {
-        padding: 56px 0;
-      }
-
-      .info-card,
-      .cta-panel {
-        padding: 22px;
+      .more-products,
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
 
       .floating-actions {
@@ -931,7 +831,7 @@
         <span class="brand-mark" aria-hidden="true">GBA</span>
         <span class="brand-text">
           <strong>גרון שיווק בע״מ</strong>
-          <span>ייצור ושיווק שקיות אריזה בסיטונאות</span>
+          <span>שקיות אריזה וניילון לעסקים</span>
         </span>
       </a>
 
@@ -941,10 +841,9 @@
 
       <nav id="main-navigation" class="main-nav" role="navigation" aria-label="תפריט ראשי">
         <a href="#about" title="מעבר לאודות גרון שיווק">אודות</a>
-        <a href="#products" title="מעבר לסוגי שקיות אריזה">סוגי שקיות</a>
-        <a href="#branding" title="מעבר למיתוג והדפסה">מיתוג והדפסה</a>
-        <a href="#industries" title="מעבר לענפי פעילות">ענפי פעילות</a>
-        <a href="#more-products" title="מעבר למוצרים נוספים">מוצרים נוספים</a>
+        <a href="#products" title="מעבר לסוגי השקיות">שקיות אריזה</a>
+        <a href="#branding" title="מעבר למידע על מיתוג שקיות">מיתוג</a>
+        <a href="#business" title="מעבר למידע לעסקים ותעשייה">לעסקים</a>
         <a href="#contact" title="מעבר לפרטי יצירת קשר">יצירת קשר</a>
       </nav>
     </div>
@@ -954,154 +853,146 @@
     <section id="top" class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div>
-          <p class="eyebrow">גרון שיווק פועלת מאז 1992</p>
-          <h1 id="hero-title">שקיות אריזה לעסקים, תעשייה וסיטונאים <span>בייצור מקצועי</span></h1>
+          <p class="eyebrow">גרון שיווק בע״מ · מאז 1992</p>
+          <h1 id="hero-title">שקיות אריזה בסיטונאות לעסקים, מסחר ותעשייה</h1>
           <p class="hero-lead">
-            גרון שיווק בע״מ מתמחה בייצור, שיווק ואספקה של שקיות אריזה בכמויות גדולות בלבד:
-            שקיות גופיה, שקיות דליה ושקיות פסגור, עם אפשרויות התאמה לפי מידה, צבע, עובי, שימוש והדפסה ממותגת.
-            החברה מספקת פתרונות פלסטיקה ואריזה מתקדמים לענפי המסחר והתעשייה, תוך הקפדה על איכות, יציבות אספקה והתאמה לצורכי הלקוח העסקי.
+            אנחנו בגרון שיווק מספקים שקיות אריזה ומוצרי ניילון לעסקים שצריכים פתרון קבוע, מסודר ובכמויות גדולות.
+            המענה שלנו מתאים לחנויות, רשתות, מוסכים, ספקים, מפעלים, יבואנים, גופים מוסדיים ולקוחות מסחריים שזקוקים לשקיות גופיה, שקיות דליה, שקיות פסגור ומוצרי ניילון נוספים לפי צורך.
+          </p>
+          <p class="hero-lead">
+            אפשר להזמין שקיות במידות שונות, בצבעים שונים, עם הדפסים קיימים או עם הדפסה לפי בחירת הלקוח.
+            המטרה שלנו פשוטה: לספק ללקוחות שלנו שקיות שמתאימות לשימוש היום־יומי שלהם, נראות טוב, נוחות לעבודה ונותנות לעסק עוד נקודת מיתוג בכל מסירה של מוצר.
           </p>
 
           <div class="hero-actions" aria-label="ניווט מהיר">
-            <a class="btn btn-primary" href="#products" title="מעבר לסקירת שקיות האריזה">לסקירת סוגי השקיות</a>
-            <a class="btn btn-outline" href="#branding" title="מעבר להסבר על הדפסה ומיתוג שקיות">מיתוג שקיות לעסק</a>
+            <a class="btn btn-primary" href="#products" title="מעבר לסוגי שקיות האריזה">לסוגי השקיות</a>
+            <a class="btn btn-outline" href="#branding" title="מעבר למידע על שקיות ממותגות">שקיות ממותגות לעסק</a>
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="תצוגת מוצר מרכזית">
-          <div class="hero-card">
-            <img src="plastic-bags-1.jpg" alt="שקית גופיה לבנה ממותגת לעסק בכמות סיטונאית" loading="eager">
-            <div class="hero-stats" aria-label="נתוני יתרון מרכזיים">
-              <div class="stat">
-                <strong>1992</strong>
-                <span>שנת הקמה</span>
-              </div>
-              <div class="stat">
-                <strong>3</strong>
-                <span>סוגי שקיות מרכזיים</span>
-              </div>
-              <div class="stat">
-                <strong>עד 3</strong>
-                <span>צבעי הדפסה</span>
-              </div>
-            </div>
-          </div>
-        </aside>
+        <div class="hero-visual" aria-label="תצוגת שקית אריזה">
+          <img src="plastic-bags-1.jpg" alt="שקית גופיה לבנה ממותגת לעסק" loading="eager">
+        </div>
       </div>
     </section>
 
-    <div class="wholesale-strip" role="note" aria-label="הבהרה חשובה בנושא מכירה">
-      מכירה בסיטונאות בלבד — אספקה בכמויות גדולות לעסקים, חברות, מוסדות, תעשייה ולקוחות מסחריים.
+    <div class="wholesale-strip" role="note" aria-label="הבהרה בנושא מכירה">
+      מכירה בסיטונאות בלבד · אספקה בכמויות גדולות לעסקים, חברות, מוסדות ולקוחות מסחריים
     </div>
 
     <section id="about" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <article class="info-card dark">
+      <div class="container about-layout">
+        <article class="highlight-card">
           <p class="section-kicker">מי אנחנו</p>
-          <h2 id="about-title">גרון שיווק — ניסיון רב בתחום הפלסטיקה וייצור הניילון</h2>
+          <h2 id="about-title">אנחנו מספקים פתרונות פלסטיקה ואריזה לענפי המסחר והתעשייה</h2>
           <p>
-            חברת גרון שיווק בע״מ מלווה לקוחות עסקיים משנת 1992 ומספקת פתרונות אריזה וניילון בהתאמה לצרכים משתנים של ענפי מסחר, תעשייה, מוסכים, יבואנים, רשתות, גופים מוסדיים ולקוחות סיטונאיים.
-            הניסיון המצטבר בתחום הפלסטיקה מאפשר לחברה להתאים את סוג השקית, המידה, עובי החומר, צבע השקית ואפשרויות ההדפסה לפי אופי השימוש בפועל.
+            גרון שיווק בע״מ פועלת משנת 1992 בתחום הפלסטיקה, הניילון ומוצרי האריזה.
+            לאורך השנים אנחנו עובדים עם לקוחות עסקיים שזקוקים למוצרים שימושיים, זמינים ומתאימים לאופי הפעילות שלהם:
+            שקיות לאריזת מוצרים, שקיות לחלוקה ללקוחות, שקיות למוסכים, שקיות לתעשייה, שקיות ממותגות ומוצרי ניילון נוספים.
           </p>
           <p>
-            עבור לקוח עסקי, שקית אריזה אינה רק מוצר משלים. היא חלק מתהליך השירות, חלק מחוויית הקנייה, חלק מהאחסון וההובלה, ולעיתים גם שטח פרסום נייד שממשיך לחשוף את שם העסק לאחר הרכישה.
-            לכן בחירת שקית מתאימה צריכה להיעשות לפי עומס, נפח, נראות, אופן נשיאה, סוג מוצר, תנאי אחסון ומסר תדמיתי.
+            אנחנו מתייחסים לשקית כאל חלק מהפעילות של העסק. לפעמים היא משמשת לנשיאה בקופה, לפעמים לאריזת חלקים או מוצרים קטנים, לפעמים לאחסון, ולפעמים היא הדרך שבה הלקוח פוגש את המותג גם אחרי שהוא יוצא מהעסק.
+            לכן חשוב לנו להתאים את סוג השקית לשימוש בפועל: מידה, עובי, צבע, ידית, סגירה והדפסה.
           </p>
         </article>
 
-        <article class="info-card">
-          <p class="section-kicker">גישה מקצועית</p>
-          <h2>ייצור לפי דרישה ולא מוצר מדף בלבד</h2>
+        <article class="content-card">
+          <p class="section-kicker">מה אפשר להזמין</p>
+          <h2>שקיות לפי צורך עסקי, בכמויות גדולות</h2>
           <p>
-            גרון שיווק מספקת ללקוחותיה מגוון רחב של מוצרים איכותיים בהתאם לדרישותיהם, ועושה שימוש בחומרים ידידותיים יותר לסביבה, לרבות חומרים מתכלים או ממוחזרים בהתאם לסוג המוצר והצורך.
-            לקוחות החברה יכולים לקבל מענה רחב לייצור שקיות בגדלים שונים, צבעים שונים, עוביים שונים ואפשרות להדפסה על גבי השקית.
+            אנחנו מספקים מגוון רחב של שקיות אריזה לעסקים, כאשר לכל סוג שקית יש שימוש אחר.
+            יש עסקים שצריכים שקית נשיאה פשוטה ונוחה, יש עסקים שמעדיפים שקית עם מראה ייצוגי יותר, ויש לקוחות שצריכים שקיות עם סגירה חוזרת לאריזה מסודרת של מוצרים, חלקים או פריטים קטנים.
           </p>
-          <ul class="check-list">
-            <li>ייצור שקיות אריזה בכמויות גדולות בלבד ללקוחות עסקיים וסיטונאיים.</li>
-            <li>אפשרות להדפסה ומיתוג לפי לוגו, צבעי מותג או סממן מסחרי.</li>
-            <li>התאמה לפי מידות, עובי, צבע, שימוש ואופי המוצר הנארז.</li>
-            <li>מענה לענפי מסחר, תעשייה, מוסכים, יבואנים, רשתות ולקוחות מוסדיים.</li>
+          <p>
+            לצד שקיות רגילות, ניתן להזמין שקיות עם הדפסה ומיתוג. הדפסה על שקיות מתאימה לעסקים שרוצים לחזק את הנראות שלהם במעמד המסירה ללקוח, ליצור אחידות עם שפת המותג ולהפוך מוצר שימושי גם לכלי פרסומי פשוט וברור.
+          </p>
+
+          <ul class="simple-list">
+            <li>שקיות גופיה, שקיות דליה ושקיות פסגור במידות שונות.</li>
+            <li>אפשרות לצבעים שונים, שקיות חלקות או שקיות מודפסות.</li>
+            <li>הדפסה ומיתוג לפי בחירת הלקוח ובהתאם לסוג השקית.</li>
+            <li>מענה לעסקים, תעשייה, מסחר, מוסכים, ספקים ולקוחות סיטונאיים.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section id="products" aria-labelledby="products-title">
+    <section id="products" class="products" aria-labelledby="products-title">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">שלוש קטגוריות מרכזיות</p>
-          <h2 id="products-title">שקיות אריזה לעסקים בכמויות גדולות</h2>
+          <p class="section-kicker">שקיות אריזה</p>
+          <h2 id="products-title">השקיות שאנחנו מספקים לעסקים</h2>
           <p>
-            השקיות המרכזיות של גרון שיווק מיועדות לתת מענה למגוון רחב של שימושים: אריזת מוצרים בקופה, חלוקה ללקוח, אריזה ממותגת, אחסון מסודר, שמירה על מוצרים קטנים או אריזת פריטים לפני משלוח.
-            בכל קטגוריה ניתן לבחון גדלים שונים, צבעים, הדפסים ואפשרויות מיתוג בהתאם למפרט הלקוח.
+            לכל עסק יש צורך אחר באריזה. יש עסקים שמחפשים שקית חזקה ונוחה לנשיאה, יש כאלה שצריכים שקית מרשימה יותר למוצרי לקוח, ויש עסקים שמבקשים פתרון קטן, מסודר ונסגר לאחסון או שילוח.
+            לכן אנחנו עובדים עם כמה סוגי שקיות, וניתן להתאים את המוצר לפי שימוש, כמות, צבע, מידה והדפסה.
           </p>
         </div>
 
-        <div class="products-grid">
-          <article class="product-card">
+        <div class="product-row">
+          <article class="product-item">
             <div class="product-image">
-              <img src="plastic-bags-1.jpg" alt="שקיות גופיה לעסקים עם אפשרות הדפסה ומיתוג" loading="lazy">
+              <img src="plastic-bags-1.jpg" alt="שקיות גופיה לבנות עם אפשרות הדפסה לעסק" loading="lazy">
             </div>
-            <div class="product-content">
+            <div>
               <h3>שקיות גופיה</h3>
               <p>
-                שקיות גופיה הן פתרון אריזה מוכר, נוח ושימושי לעסקים הזקוקים לשקית חזקה ונגישה לנשיאת מוצרים.
-                הן מתאימות לרשתות, חנויות, ספקים, מרכזי שירות, מחסנים ולקוחות מסחריים שצריכים שקית פונקציונלית בכמויות גדולות.
-                ניתן לייצר שקיות גופיה במידות שונות, בצבעים כמו שקוף או לבן, ובהדפסה צבעונית לפי צורך.
+                שקיות גופיה מתאימות לעסקים שצריכים שקית נשיאה שימושית בכמות גדולה.
+                הן נפוצות בחנויות, נקודות מכירה, מחסנים, ספקים ועסקים שמוסרים מוצרים ללקוח באופן יום־יומי.
+                ניתן להזמין שקיות גופיה במידות שונות, בצבעים כמו שקוף או לבן, וגם עם הדפסה צבעונית בהתאם לצורך.
               </p>
               <p>
-                היתרון המרכזי של שקית גופיה הוא שילוב בין נוחות נשיאה, עלות תפעולית יעילה ואפשרות להפוך את השקית למוצר נראות עסקי.
-                כאשר מוסיפים לוגו, צבע מותג או מסר קצר, השקית משמשת גם ככלי תדמיתי שנמצא בתנועה עם הלקוח.
+                היתרון של שקית גופיה הוא הפשטות שלה: היא קלה לשימוש, נוחה לנשיאה ומתאימה למגוון רחב של מוצרים.
+                כאשר מוסיפים לה הדפסה של לוגו או פרטי מותג, היא הופכת גם לשקית שממשיכה להציג את העסק אחרי הרכישה.
               </p>
               <div class="tags">
-                <span class="tag">גדלים שונים</span>
+                <span class="tag">מידות שונות</span>
+                <span class="tag">צבעים שונים</span>
                 <span class="tag">אפשרות הדפסה</span>
-                <span class="tag">למסחר ותעשייה</span>
               </div>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-item">
             <div class="product-image">
-              <img src="dalia.png" alt="שקיות דליה עם ידית נשיאה והדפסה לעסק" loading="lazy">
+              <img src="dalia.png" alt="שקיות דליה ממותגות עם ידית נשיאה" loading="lazy">
             </div>
-            <div class="product-content">
+            <div>
               <h3>שקיות דליה</h3>
               <p>
                 <a href="https://www.gba.co.il/product-category/packing-bags/dahlia-bags/" title="מעבר לקטגוריית שקיות דליה באתר גרון שיווק">שקיות דליה</a>
-                מתאימות לעסקים שרוצים פתרון אריזה בעל נראות ייצוגית יותר, עם אפשרות לידית נשיאה, הדפסים, צבעים והתאמה למידות שונות.
-                השקיות משמשות לאריזת מוצרים, חלוקה ללקוחות, קידום מכירות, תערוכות, נקודות מכירה, מוצרי פרסום ומיתוג עסקי.
+                מתאימות לעסקים שרוצים שקית נשיאה עם מראה מסודר וייצוגי יותר.
+                הן מגיעות בגדלים שונים, כולל אפשרות לידיות, וניתן להזמין אותן בצבעים חלקים, עם הדפסים ועיטורים כלליים או עם הדפסה לבחירת הלקוח.
               </p>
               <p>
-                ניתן להזמין שקיות דליה בצבע אחיד, עם עיטורים סטנדרטיים או עם הדפסה מותאמת של לוגו וסממן מסחרי.
-                עבור עסקים שמבקשים לשדר סדר, השקעה ונראות גבוהה יותר במעמד מסירת המוצר, שקית דליה יכולה להיות פתרון מדויק במיוחד.
+                אנחנו רואים בשקיות דליה פתרון טוב לעסקים שמוסרים מוצרים ללקוחות ורוצים שהאריזה תיראה נקייה, ברורה ומתאימה למותג.
+                השקית יכולה להתאים לנקודות מכירה, תערוכות, חלוקת מוצרים, מארזים מסחריים ושימושים נוספים שבהם הנראות חשובה לצד השימושיות.
               </p>
               <div class="tags">
-                <span class="tag">מראה ייצוגי</span>
-                <span class="tag">מיתוג עסקי</span>
-                <span class="tag">הדפסה איכותית</span>
+                <span class="tag">שקית ייצוגית</span>
+                <span class="tag">הדפסים ועיטורים</span>
+                <span class="tag">אפשרות למיתוג</span>
               </div>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-item">
             <div class="product-image">
-              <img src="Printed-ziplock-bag.jpg" alt="שקיות פסגור שקופות עם סגירה חוזרת לאריזת מוצרים" loading="lazy">
+              <img src="Printed-ziplock-bag.jpg" alt="שקיות פסגור שקופות עם סגירה חוזרת" loading="lazy">
             </div>
-            <div class="product-content">
+            <div>
               <h3>שקיות פסגור</h3>
               <p>
-                שקיות פסגור מיועדות לאריזת פריטים קטנים, חלקים, מוצרים משלימים, אביזרים, מסמכים, דוגמאות, ציוד טכני ומוצרים שדורשים סגירה חוזרת ונוחה.
-                הן מתאימות לענפי מסחר ותעשייה רבים, שבהם חשוב לשמור על סדר, זיהוי מהיר של התכולה ושימוש חוזר בשקית.
+                שקיות פסגור מתאימות לאריזה מסודרת של מוצרים קטנים, חלקים, אביזרים, דוגמאות, מסמכים ופריטים שצריכים סגירה חוזרת.
+                הן שימושיות במיוחד לעסקים שרוצים לשמור על סדר באריזה, במחסן, בשילוח או במסירה ללקוח.
               </p>
               <p>
-                גרון שיווק מייצרת ומשווקת שקיות פסגור חלקות או מודפסות במידות שונות.
-                האפשרות להתאמה לפי גודל, עובי והדפסה מאפשרת לעסק לקבל שקית שאינה רק אמצעי אחסון, אלא פתרון תפעולי שמקל על אריזה, שילוח, אחסון וניהול מלאי.
+                ניתן להזמין שקיות פסגור במידות שונות, חלקות או מודפסות, בהתאם לצורך העסקי.
+                עבור עסקים שעובדים עם מוצרים קטנים או עם פריטים שצריכים זיהוי, הפרדה ושמירה נוחה, שקית פסגור יכולה לחסוך זמן וליצור תהליך אריזה מסודר יותר.
               </p>
               <div class="tags">
                 <span class="tag">סגירה חוזרת</span>
                 <span class="tag">חלק או מודפס</span>
-                <span class="tag">למלאי ואחסון</span>
+                <span class="tag">לאריזה ואחסון</span>
               </div>
             </div>
           </article>
@@ -1109,136 +1000,77 @@
       </div>
     </section>
 
-    <section id="branding" class="brand-section" aria-labelledby="branding-title">
+    <section id="branding" aria-labelledby="branding-title">
+      <div class="container two-cols">
+        <article class="content-card">
+          <p class="section-kicker">מיתוג על שקיות</p>
+          <h2 id="branding-title">איך שקית ממותגת עוזרת לעסק?</h2>
+          <p>
+            כשלקוח מקבל מוצר בתוך שקית עם שם העסק, הלוגו או הצבעים המזוהים איתו, האריזה מרגישה מסודרת יותר.
+            זה נכון לחנות, מוסך, יבואן, ספק, חברה מסחרית או גוף שמוסר מוצרים באופן קבוע.
+            השקית ממלאת תפקיד שימושי, ובאותו זמן גם מציגה את העסק בצורה פשוטה וברורה.
+          </p>
+          <p>
+            אנחנו מאפשרים ללקוחות להזמין שקיות עם הדפסה לפי בחירה, בהתאם לסוג השקית ולצורך.
+            לפני הזמנה חשוב להבין מה המוצר שאורזים, מה המשקל המשוער, מה המידה המתאימה, האם השקית נועדה לנשיאה או לאחסון, ומה רמת הנראות שהעסק רוצה לקבל.
+          </p>
+          <p>
+            במקרים רבים, דווקא מוצר קטן כמו שקית יוצר רושם עקבי: לקוח מקבל מוצר ארוז בצורה מסודרת, העובדים משתמשים באותה אריזה בכל נקודת שירות, והעסק מקבל שפה אחידה גם בפרטים הקטנים.
+          </p>
+        </article>
+
+        <aside class="green-panel" aria-label="התאמה להזמנה עסקית">
+          <h3>מה אנחנו בודקים יחד עם הלקוח?</h3>
+          <ul class="simple-list">
+            <li>איזה סוג שקית מתאים לשימוש: גופיה, דליה או פסגור.</li>
+            <li>איזו מידה מתאימה למוצר ולדרך שבה הוא נמסר ללקוח.</li>
+            <li>האם נדרשת שקית חלקה, צבעונית, מודפסת או ממותגת.</li>
+            <li>מה הכמות הדרושה להזמנה סיטונאית ומה תדירות השימוש הצפויה.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="business" aria-labelledby="business-title">
       <div class="container">
-        <div class="brand-grid">
-          <div class="section-head">
-            <p class="section-kicker">מיתוג על גבי שקיות</p>
-            <h2 id="branding-title">שקית ממותגת היא נקודת מגע נוספת עם הלקוח</h2>
-            <p>
-              עבור עסקים שמספקים מוצרים באופן קבוע, השקית היא הרבה יותר מאריזה. היא מופיעה ברגע מסירת המוצר, נמצאת ביד של הלקוח, עוברת ממקום למקום ולעיתים נשמרת לשימוש נוסף.
-              לכן הדפסה על שקיות יכולה להפוך מוצר תפעולי לכלי פרסום פשוט, יעיל ומתמשך.
-            </p>
-            <p>
-              מיתוג שקיות מתאים לרשתות, חנויות, יבואנים, מוסכים, חברות שירות, מרכזים לוגיסטיים, מפעלים, לקוחות מוסדיים וכל עסק שמוסר מוצרים, חלקים או מארזים ללקוחותיו.
-              באמצעות בחירה נכונה של צבע השקית, מיקום הלוגו, גודל ההדפסה וסוג החומר, ניתן ליצור נראות אחידה שמחזקת את הזיהוי של העסק.
-            </p>
+        <div class="content-card">
+          <p class="section-kicker">לעסקים, מוסדות ותעשייה</p>
+          <h2 id="business-title">מענה רחב יותר ממוצר אחד</h2>
+          <p>
+            אנחנו עובדים עם לקוחות שצריכים אספקה עסקית ולא רכישה נקודתית קטנה.
+            בין לקוחות החברה ניתן למצוא גופים וחברות מוכרים, ובהם משרד הבריאות, כלמוביל, לובינסקי טרייד & ליס, אלבר, אל על, סמלת ועוד.
+            העבודה מול לקוחות כאלה דורשת סדר, זמינות, הבנה של כמויות והתאמה לסוג השימוש.
+          </p>
+          <p>
+            מעבר לשקיות האריזה, בגרון שיווק קיימים גם מוצרי ניילון לתעשייה, ניילון לאריזה, גליל ניילון תעשייתי, שרוולי ניילון, מוצרי ניילון לרכב ומוצרי נייר לתעשייה.
+            כך לקוחות שזקוקים לכמה פתרונות משלימים יכולים לקבל מענה רחב יותר במקום אחד.
+          </p>
+
+          <div class="clients" aria-label="דוגמאות ללקוחות">
+            <span class="client-pill">משרד הבריאות</span>
+            <span class="client-pill">כלמוביל</span>
+            <span class="client-pill">לובינסקי טרייד &amp; ליס</span>
+            <span class="client-pill">אלבר</span>
+            <span class="client-pill">אל על</span>
+            <span class="client-pill">סמלת</span>
           </div>
 
-          <article class="info-card">
-            <h3>מה כדאי לבדוק לפני הזמנה?</h3>
-            <ul class="check-list">
-              <li>מה המשקל והנפח שהשקית צריכה לשאת בפועל.</li>
-              <li>האם נדרשת שקית ייצוגית, שקית תפעולית או שקית לשימוש חוזר.</li>
-              <li>האם ההדפסה צריכה להיות בצבע אחד, במספר צבעים או לפי קו מותג קיים.</li>
-              <li>האם יש צורך בחומר ממוחזר, חומר מתכלה או התאמה סביבתית אחרת.</li>
-            </ul>
-          </article>
-        </div>
+          <div class="more-products" aria-label="מוצרים נוספים">
+            <article class="mini-card">
+              <h3>ניילון לתעשייה</h3>
+              <p>מוצרי ניילון לאריזה, שימוש תפעולי, כיסוי, אחסון וצרכים שונים של עסקים ותעשייה.</p>
+            </article>
 
-        <div class="feature-grid" aria-label="יתרונות מיתוג והדפסה">
-          <article class="feature">
-            <span class="feature-icon" aria-hidden="true">01</span>
-            <h4>נראות עסקית עקבית</h4>
-            <p>כאשר השקית נושאת לוגו או צבעי מותג, היא מחזקת את הזכירות של העסק בכל מפגש עם הלקוח.</p>
-          </article>
+            <article class="mini-card">
+              <h3>מוצרי נייר לתעשייה</h3>
+              <p>מוצרים משלימים לעסקים, מוסדות וסביבות עבודה שזקוקות לציוד שוטף בכמויות גדולות.</p>
+            </article>
 
-          <article class="feature">
-            <span class="feature-icon" aria-hidden="true">02</span>
-            <h4>התאמה לצורכי השימוש</h4>
-            <p>הבחירה במידה, עובי וסוג שקית מאפשרת להתאים את האריזה למוצר עצמו ולאופי הפעילות.</p>
-          </article>
-
-          <article class="feature">
-            <span class="feature-icon" aria-hidden="true">03</span>
-            <h4>פתרון לסיטונאים</h4>
-            <p>הייצור בכמויות גדולות מתאים לעסקים שזקוקים לאספקה שוטפת ולא למלאי קטן או נקודתי.</p>
-          </article>
-
-          <article class="feature">
-            <span class="feature-icon" aria-hidden="true">04</span>
-            <h4>שילוב בין תפעול לפרסום</h4>
-            <p>השקית ממלאת צורך שימושי ובו זמנית מציגה את העסק בצורה ברורה ונגישה.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="industries" class="customers" aria-labelledby="industries-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">למי זה מתאים</p>
-          <h2 id="industries-title">פתרונות שקיות ופלסטיקה לענפי מסחר ותעשייה</h2>
-          <p>
-            גרון שיווק פועלת מול לקוחות עסקיים הזקוקים למענה יציב, רחב ומקצועי בתחום השקיות והניילון.
-            הפתרונות מתאימים לעסקים שמבצעים אריזה שוטפת, מסירת מוצרים, אחסון פריטים, הכנה לשילוח, חלוקה ללקוחות או מיתוג נקודת המכירה.
-            בין תחומי הפעילות ניתן למצוא תעשייה, מסחר, רכב, מוסכים, רשתות, גופים מוסדיים, יבואנים, ספקים ולקוחות סיטונאיים.
-          </p>
-          <p>
-            בין לקוחות החברה נמנים גופים וחברות מוכרים כגון משרד הבריאות, כלמוביל, לובינסקי טרייד & ליס, אלבר, אל על, סמלת ועוד.
-            שילוב של ניסיון, התאמה אישית ואפשרות לייצור בכמויות גדולות מאפשר לחברה לתת מענה לעסקים שצריכים מוצר אריזה אמין לאורך זמן.
-          </p>
-        </div>
-
-        <div class="logos-text" aria-label="דוגמאות ללקוחות">
-          <span class="client-pill">משרד הבריאות</span>
-          <span class="client-pill">כלמוביל</span>
-          <span class="client-pill">לובינסקי טרייד &amp; ליס</span>
-          <span class="client-pill">אלבר</span>
-          <span class="client-pill">אל על</span>
-          <span class="client-pill">סמלת</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="more-products" aria-labelledby="more-products-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">מעבר לשקיות אריזה</p>
-          <h2 id="more-products-title">מענה רחב למוצרי ניילון, פלסטיקה ונייר לתעשייה</h2>
-          <p>
-            לצד שקיות גופיה, שקיות דליה ושקיות פסגור, גרון שיווק מציעה מגוון מוצרים נוספים שיכולים להשלים את הצורך העסקי באריזה, כיסוי, אחסון ושימוש תעשייתי.
-            המגוון הרחב מאפשר ללקוחות לרכז פתרונות שונים אצל ספק אחד, בהתאם לדרישות הייצור, התפעול והאספקה שלהם.
-          </p>
-        </div>
-
-        <div class="extra-grid">
-          <article class="extra-card">
-            <h3>ניילון לתעשייה</h3>
-            <p>
-              פתרונות ניילון לתעשייה, לרבות ניילון לאריזה, יריעות, גלילים ופתרונות המותאמים לצרכים תפעוליים של עסקים ומפעלים.
-            </p>
-          </article>
-
-          <article class="extra-card">
-            <h3>מוצרי נייר לתעשייה</h3>
-            <p>
-              מוצרים משלימים לעסקים ותעשייה, המיועדים לסביבת עבודה, אריזה, שימוש שוטף ותפעול יום־יומי בהתאם לסוג הפעילות.
-            </p>
-          </article>
-
-          <article class="extra-card">
-            <h3>מוצרי ניילון לרכב</h3>
-            <p>
-              פתרונות ניילון וכיסוי לענף הרכב, מוסכים, יבואנים ונותני שירות, כחלק ממערך מוצרים רחב לעסקים בכמויות גדולות.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="cta-title">
-      <div class="container">
-        <div class="cta-panel">
-          <div>
-            <h2 id="cta-title">צריכים שקיות אריזה בכמויות גדולות?</h2>
-            <p>
-              בחירת השקית הנכונה מתחילה בהבנת הצורך: מה אורזים, איך נושאים, האם נדרש מיתוג, מהי הכמות הדרושה ומהו סוג החומר המתאים.
-              גרון שיווק מספקת מענה מקצועי לעסקים, סיטונאים, תעשייה ולקוחות מוסדיים הזקוקים לפתרון אריזה מותאם ולאספקה בכמויות גדולות בלבד.
-            </p>
-            <p>ט.ל.ח</p>
+            <article class="mini-card">
+              <h3>מוצרי ניילון לרכב</h3>
+              <p>פתרונות ניילון וכיסוי לענף הרכב, מוסכים, יבואנים ונותני שירות בתחום הרכב.</p>
+            </article>
           </div>
-          <a class="btn btn-primary" href="#contact" title="מעבר לפרטי יצירת קשר בפוטר">לפרטי התקשרות</a>
         </div>
       </div>
     </section>
@@ -1250,9 +1082,10 @@
         <section class="footer-col" aria-labelledby="footer-company">
           <h3 id="footer-company">גרון שיווק בע״מ</h3>
           <p>
-            ייצור ושיווק שקיות אריזה, מוצרי ניילון ופתרונות פלסטיקה לעסקים, תעשייה וסיטונאים בכמויות גדולות בלבד.
+            שקיות אריזה, מוצרי ניילון ופתרונות פלסטיקה לעסקים, מסחר ותעשייה בכמויות גדולות בלבד.
           </p>
           <p>טלפון: 054-434-3919</p>
+
           <div class="footer-actions" aria-label="כפתורי יצירת קשר">
             <a class="footer-btn" href="tel:0544343919" title="התקשרו לגרון שיווק">התקשרו</a>
             <a class="footer-btn whatsapp" href="https://wa.me/972544343919" title="שליחת הודעת וואטסאפ לגרון שיווק">☘ וואטסאפ</a>
@@ -1260,47 +1093,49 @@
         </section>
 
         <section class="footer-col" aria-labelledby="footer-products">
-          <h3 id="footer-products">מוצרים מרכזיים</h3>
+          <h3 id="footer-products">שקיות אריזה</h3>
           <ul>
-            <li>שקיות גופיה לעסקים</li>
-            <li>שקיות דליה ממותגות</li>
-            <li>שקיות פסגור במידות שונות</li>
-            <li>ניילון ומוצרי אריזה לתעשייה</li>
+            <li>שקיות גופיה</li>
+            <li>שקיות דליה</li>
+            <li>שקיות פסגור</li>
+            <li>שקיות מודפסות וממותגות</li>
+          </ul>
+        </section>
+
+        <section class="footer-col" aria-labelledby="footer-more">
+          <h3 id="footer-more">מוצרים נוספים</h3>
+          <ul>
+            <li>ניילון לתעשייה</li>
+            <li>ניילון לאריזה</li>
+            <li>גליל ניילון תעשייתי</li>
+            <li>מוצרי נייר לתעשייה</li>
           </ul>
         </section>
 
         <section class="footer-col" aria-labelledby="footer-links">
-          <h3 id="footer-links">קישורים שימושיים</h3>
+          <h3 id="footer-links">מידע וקישורים</h3>
           <ul>
-            <li><a href="#about" title="מעבר לאודות החברה">אודות החברה</a></li>
-            <li><a href="#products" title="מעבר לסוגי השקיות">סוגי השקיות</a></li>
-            <li><a href="#branding" title="מעבר למידע על מיתוג שקיות">מיתוג והדפסה</a></li>
+            <li><a href="#about" title="מעבר לאודות גרון שיווק">אודות</a></li>
+            <li><a href="#products" title="מעבר לשקיות האריזה">שקיות אריזה</a></li>
+            <li><a href="#branding" title="מעבר למידע על מיתוג שקיות">מיתוג שקיות</a></li>
             <li><a href="https://www.facebook.com/geron.marketing.g.b.a/" title="מעבר לעמוד הפייסבוק של גרון שיווק">עמוד הפייסבוק של החברה</a></li>
           </ul>
         </section>
+      </div>
 
-        <section class="footer-col" aria-labelledby="footer-accessibility">
-          <h3 id="footer-accessibility">נגישות ופרטיות</h3>
-          <p>
-            הדף נבנה תוך הקפדה על היררכיית כותרות, ניגודיות צבעים, טקסט קריא, ניווט עוגנים, תיאור תמונות וקישורים עם כותרת.
-          </p>
-          <p>
-            <a title="נבנה על ידי פרוסייטס" class="" href="https://prosites.co.il/">נבנה על ידי פרוסייטס</a>
-          </p>
-        </section>
+      <div class="privacy-note">
+        אנו מכבדים את פרטיות המשתמשים באתר זה. דף הנחיתה אינו כולל טפסי השארת פרטים ואינו אוסף מידע אישי באופן ישיר.
+        ייתכן ונעשה שימוש בכלי סטטיסטיקה וניתוח תנועה (כגון cookies) לצורך שיפור חוויית המשתמש.
+        האתר מאוחסן ומופעל באמצעות פלטפורמת github, וייתכן כי נתונים טכניים נאספים בהתאם למדיניות הפלטפורמה.
+        ניתן לעיין במדיניות הפרטיות של github בקישור הבא:
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" title="מעבר למדיניות הפרטיות של GitHub">מדיניות הפרטיות של GitHub</a>.
       </div>
 
       <div class="footer-bottom">
-        <div class="privacy-note">
-          אנו מכבדים את פרטיות המשתמשים באתר זה. דף הנחיתה אינו כולל טפסי השארת פרטים ואינו אוסף מידע אישי באופן ישיר.
-          ייתכן ונעשה שימוש בכלי סטטיסטיקה וניתוח תנועה (כגון cookies) לצורך שיפור חוויית המשתמש.
-          האתר מאוחסן ומופעל באמצעות פלטפורמת github, וייתכן כי נתונים טכניים נאספים בהתאם למדיניות הפלטפורמה.
-          ניתן לעיין במדיניות הפרטיות של github בקישור הבא:
-          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" title="מעבר למדיניות הפרטיות של GitHub">מדיניות הפרטיות של GitHub</a>.
-        </div>
-
+        <p>ט.ל.ח</p>
         <p>נבנה עם היררכיית כותרות, קישורי עוגן, ALT לתמונות, TITLE לקישורים, גודל טקסט מינימלי של 18px וניגודיות משופרת.</p>
-        <p>© כל הזכויות שמורות לגרון שיווק בע״מ. ט.ל.ח</p>
+        <p><a title="נבנה על ידי פרוסייטס" class="" href="https://prosites.co.il/">נבנה על ידי פרוסייטס</a></p>
+        <p>© כל הזכויות שמורות לגרון שיווק בע״מ.</p>
       </div>
     </div>
   </footer>
