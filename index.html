@@ -14,13 +14,15 @@
       --green-dark: #04481E;
       --green-main: #2B6900;
       --green-soft: #F3FCF6;
+      --green-pale: #EAF7EF;
       --yellow: #DDD500;
       --white: #ffffff;
       --black: #111111;
       --text: #1d1d1d;
       --muted: #4b5563;
       --line: rgba(4, 72, 30, 0.16);
-      --shadow: 0 18px 44px rgba(4, 72, 30, 0.16);
+      --shadow: 0 18px 44px rgba(4, 72, 30, 0.15);
+      --shadow-soft: 0 10px 28px rgba(4, 72, 30, 0.10);
       --radius-xl: 30px;
       --radius-lg: 22px;
       --radius-md: 16px;
@@ -42,7 +44,10 @@
       font-size: 19px;
       line-height: 1.75;
       color: var(--text);
-      background: var(--green-soft);
+      background:
+        radial-gradient(circle at top right, rgba(221, 213, 0, 0.09), transparent 340px),
+        radial-gradient(circle at 8% 22%, rgba(43, 105, 0, 0.08), transparent 320px),
+        linear-gradient(180deg, #F8FFF9 0%, var(--green-soft) 48%, #FFFFFF 100%);
       overflow-x: hidden;
     }
 
@@ -217,8 +222,8 @@
       overflow: hidden;
       color: var(--white);
       background:
-        radial-gradient(circle at 12% 20%, rgba(221, 213, 0, 0.22), transparent 32%),
-        radial-gradient(circle at 82% 16%, rgba(255, 255, 255, 0.14), transparent 28%),
+        radial-gradient(circle at 12% 20%, rgba(221, 213, 0, 0.20), transparent 32%),
+        radial-gradient(circle at 82% 16%, rgba(255, 255, 255, 0.13), transparent 28%),
         linear-gradient(135deg, var(--green-dark), #063718 58%, #021f0d);
     }
 
@@ -227,19 +232,19 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
       background-size: 54px 54px;
-      opacity: 0.45;
+      opacity: 0.42;
       pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
-      padding: 82px 0 72px;
+      padding: 76px 0 68px;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 46px;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+      gap: 44px;
       align-items: center;
     }
 
@@ -263,10 +268,10 @@
     }
 
     h1 {
-      max-width: 800px;
+      max-width: 760px;
       color: var(--white);
-      font-size: clamp(2.25rem, 5vw, 4.25rem);
-      letter-spacing: -0.7px;
+      font-size: clamp(2rem, 4.1vw, 3.55rem);
+      letter-spacing: -0.55px;
     }
 
     h1 span {
@@ -275,13 +280,13 @@
 
     h2 {
       color: var(--green-main);
-      font-size: clamp(1.85rem, 3.2vw, 3rem);
-      letter-spacing: -0.35px;
+      font-size: clamp(1.7rem, 2.8vw, 2.65rem);
+      letter-spacing: -0.3px;
     }
 
     h3 {
       color: var(--green-main);
-      font-size: 1.42rem;
+      font-size: 1.38rem;
       margin-bottom: 12px;
     }
 
@@ -291,9 +296,9 @@
 
     .hero-lead {
       max-width: 760px;
-      margin-top: 24px;
+      margin-top: 23px;
       color: rgba(255, 255, 255, 0.93);
-      font-size: 1.08rem;
+      font-size: 1.06rem;
     }
 
     .hero-actions {
@@ -340,7 +345,17 @@
       border-radius: var(--radius-xl);
       padding: 18px;
       box-shadow: 0 24px 62px rgba(0, 0, 0, 0.28);
-      transform: rotate(-1deg);
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto 26px -12px 26px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.18);
+      filter: blur(16px);
+      z-index: -1;
     }
 
     .hero-visual img {
@@ -378,7 +393,7 @@
     }
 
     .content-card {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.96);
       border: 1px solid var(--line);
       border-radius: var(--radius-xl);
       padding: 32px;
@@ -387,29 +402,44 @@
 
     .about-layout {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 26px;
       align-items: stretch;
     }
 
+    .about-layout > article {
+      min-height: 100%;
+    }
+
     .highlight-card {
       background:
-        radial-gradient(circle at 10% 12%, rgba(221, 213, 0, 0.16), transparent 34%),
-        linear-gradient(145deg, var(--green-dark), #063718);
-      color: var(--white);
+        linear-gradient(145deg, rgba(255, 255, 255, 0.97), rgba(243, 252, 246, 0.98)),
+        radial-gradient(circle at 14% 18%, rgba(221, 213, 0, 0.12), transparent 36%);
+      color: var(--text);
+      border: 1px solid rgba(4, 72, 30, 0.14);
       border-radius: var(--radius-xl);
       padding: 32px;
       box-shadow: var(--shadow);
       min-height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--green-main), var(--yellow), var(--green-main));
     }
 
     .highlight-card h2,
     .highlight-card h3 {
-      color: var(--yellow);
+      color: var(--green-main);
     }
 
     .highlight-card p {
-      color: rgba(255, 255, 255, 0.91);
+      color: var(--text);
     }
 
     .simple-list {
@@ -442,7 +472,9 @@
     }
 
     .products {
-      background: var(--white);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.88), rgba(243,252,246,0.75)),
+        radial-gradient(circle at left top, rgba(221, 213, 0, 0.08), transparent 380px);
       border-block: 1px solid var(--line);
     }
 
@@ -459,9 +491,8 @@
       padding: 24px;
       border: 1px solid var(--line);
       border-radius: var(--radius-xl);
-      background:
-        linear-gradient(135deg, rgba(243, 252, 246, 0.72), rgba(255, 255, 255, 1));
-      box-shadow: 0 12px 30px rgba(4, 72, 30, 0.08);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow-soft);
     }
 
     .product-item:nth-child(even) {
@@ -511,14 +542,21 @@
 
     .two-cols {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
       gap: 26px;
-      align-items: start;
+      align-items: stretch;
+    }
+
+    .two-cols > article,
+    .two-cols > aside {
+      min-height: 100%;
     }
 
     .green-panel {
-      background: var(--green-dark);
-      color: var(--white);
+      background:
+        linear-gradient(145deg, #ffffff, #f3fcf6);
+      color: var(--text);
+      border: 1px solid var(--line);
       border-radius: var(--radius-xl);
       padding: 30px;
       box-shadow: var(--shadow);
@@ -529,24 +567,38 @@
     .green-panel::after {
       content: "";
       position: absolute;
-      width: 210px;
-      height: 210px;
+      width: 190px;
+      height: 190px;
       border-radius: 999px;
-      left: -70px;
+      left: -80px;
       bottom: -90px;
-      background: rgba(221, 213, 0, 0.16);
+      background: rgba(43, 105, 0, 0.09);
     }
 
     .green-panel h2,
     .green-panel h3 {
-      color: var(--yellow);
+      color: var(--green-main);
       position: relative;
     }
 
     .green-panel p,
     .green-panel ul {
       position: relative;
-      color: rgba(255, 255, 255, 0.91);
+    }
+
+    .clients-card {
+      margin-bottom: 24px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(4, 72, 30, 0.15);
+      background:
+        radial-gradient(circle at 8% 16%, rgba(221, 213, 0, 0.13), transparent 34%),
+        linear-gradient(145deg, #ffffff, #F3FCF6);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .clients-card h2 {
+      margin-bottom: 14px;
     }
 
     .clients {
@@ -559,10 +611,11 @@
     .client-pill {
       padding: 9px 14px;
       border-radius: 999px;
-      background: var(--green-soft);
+      background: var(--white);
       color: var(--green-dark);
       border: 1px solid var(--line);
       font-weight: 950;
+      box-shadow: 0 6px 16px rgba(4, 72, 30, 0.06);
     }
 
     .more-products {
@@ -577,6 +630,7 @@
       border-radius: 22px;
       background: var(--green-soft);
       border: 1px solid var(--line);
+      box-shadow: 0 8px 20px rgba(4, 72, 30, 0.06);
     }
 
     .mini-card h3 {
@@ -599,7 +653,7 @@
     }
 
     .footer-col h3 {
-      color: var(--yellow);
+      color: var(--white);
       font-size: 1.2rem;
       margin-bottom: 14px;
     }
@@ -644,6 +698,13 @@
 
     .footer-btn.whatsapp {
       background: #1f7a1f;
+    }
+
+    .wa-icon {
+      width: 23px;
+      height: 23px;
+      display: inline-block;
+      flex: 0 0 auto;
     }
 
     .privacy-note {
@@ -770,11 +831,11 @@
       }
 
       .hero-inner {
-        padding: 58px 0 52px;
+        padding: 56px 0 50px;
       }
 
-      .hero-visual {
-        transform: none;
+      h1 {
+        font-size: clamp(1.85rem, 9vw, 2.55rem);
       }
 
       .hero-actions,
@@ -788,7 +849,8 @@
 
       .content-card,
       .highlight-card,
-      .green-panel {
+      .green-panel,
+      .clients-card {
         padding: 22px;
       }
 
@@ -871,7 +933,7 @@
         </div>
 
         <div class="hero-visual" aria-label="תצוגת שקית אריזה">
-          <img src="plastic-bags-1.jpg" alt="שקית גופיה לבנה ממותגת לעסק" loading="eager">
+          <img src="plastic-bags-1(2).jpg" alt="שקית גופיה לבנה ממותגת לעסק" loading="eager">
         </div>
       </div>
     </section>
@@ -884,15 +946,18 @@
       <div class="container about-layout">
         <article class="highlight-card">
           <p class="section-kicker">מי אנחנו</p>
-          <h2 id="about-title">אנחנו מספקים פתרונות פלסטיקה ואריזה לענפי המסחר והתעשייה</h2>
+          <h2 id="about-title">גרון שיווק ג.ב.א בע״מ</h2>
           <p>
-            גרון שיווק בע״מ פועלת משנת 1992 בתחום הפלסטיקה, הניילון ומוצרי האריזה.
-            לאורך השנים אנחנו עובדים עם לקוחות עסקיים שזקוקים למוצרים שימושיים, זמינים ומתאימים לאופי הפעילות שלהם:
-            שקיות לאריזת מוצרים, שקיות לחלוקה ללקוחות, שקיות למוסכים, שקיות לתעשייה, שקיות ממותגות ומוצרי ניילון נוספים.
+            גרון שיווק פועלת מאז 1992 בתחום הפלסטיקה וייצור מוצרי ניילון, ומספקת ללקוחות עסקיים מגוון רחב של פתרונות אריזה בהתאם לדרישות ולשימוש בפועל.
           </p>
           <p>
-            אנחנו מתייחסים לשקית כאל חלק מהפעילות של העסק. לפעמים היא משמשת לנשיאה בקופה, לפעמים לאריזת חלקים או מוצרים קטנים, לפעמים לאחסון, ולפעמים היא הדרך שבה הלקוח פוגש את המותג גם אחרי שהוא יוצא מהעסק.
-            לכן חשוב לנו להתאים את סוג השקית לשימוש בפועל: מידה, עובי, צבע, ידית, סגירה והדפסה.
+            אנחנו עובדים עם חומרים מתכלים או ממוחזרים בהתאם לסוג המוצר והצורך, ומשלבים בעבודת החברה הקפדה על איכות, התאמה ללקוח ועמידה בדרישות המקובלות בענף.
+          </p>
+          <p>
+            החברה נמנית עם חברות הפלסטיקה הראשונות בארץ ששילבו מערכת בקרת איכות בתקני ISO, ומחזיקה גם באישורי תקנים בינלאומיים נוספים המתאימים לתעשייה הכבדה ולתעשיות המזון.
+          </p>
+          <p>
+            העבודה שלנו נשענת על ניסיון, תהליכי בקרת איכות ושירות עקבי ללקוחות שזקוקים לאספקה מסודרת של שקיות, מוצרי ניילון ופתרונות פלסטיקה בכמויות גדולות.
           </p>
         </article>
 
@@ -931,7 +996,7 @@
         <div class="product-row">
           <article class="product-item">
             <div class="product-image">
-              <img src="plastic-bags-1.jpg" alt="שקיות גופיה לבנות עם אפשרות הדפסה לעסק" loading="lazy">
+              <img src="plastic-bags-1(2).jpg" alt="שקיות גופיה לבנות עם אפשרות הדפסה לעסק" loading="lazy">
             </div>
             <div>
               <h3>שקיות גופיה</h3>
@@ -1006,16 +1071,12 @@
           <p class="section-kicker">מיתוג על שקיות</p>
           <h2 id="branding-title">איך שקית ממותגת עוזרת לעסק?</h2>
           <p>
-            כשלקוח מקבל מוצר בתוך שקית עם שם העסק, הלוגו או הצבעים המזוהים איתו, האריזה מרגישה מסודרת יותר.
-            זה נכון לחנות, מוסך, יבואן, ספק, חברה מסחרית או גוף שמוסר מוצרים באופן קבוע.
-            השקית ממלאת תפקיד שימושי, ובאותו זמן גם מציגה את העסק בצורה פשוטה וברורה.
+            שקית ממותגת יוצרת נראות אחידה ברגע שבו המוצר נמסר ללקוח.
+            היא מתאימה לעסקים שרוצים שהאריזה תהיה מסודרת, ברורה ומזוהה עם שם העסק, בלי להפוך את האריזה למורכבת או עמוסה מדי.
           </p>
           <p>
-            אנחנו מאפשרים ללקוחות להזמין שקיות עם הדפסה לפי בחירה, בהתאם לסוג השקית ולצורך.
-            לפני הזמנה חשוב להבין מה המוצר שאורזים, מה המשקל המשוער, מה המידה המתאימה, האם השקית נועדה לנשיאה או לאחסון, ומה רמת הנראות שהעסק רוצה לקבל.
-          </p>
-          <p>
-            במקרים רבים, דווקא מוצר קטן כמו שקית יוצר רושם עקבי: לקוח מקבל מוצר ארוז בצורה מסודרת, העובדים משתמשים באותה אריזה בכל נקודת שירות, והעסק מקבל שפה אחידה גם בפרטים הקטנים.
+            אנחנו מאפשרים להזמין שקיות עם הדפסה לפי סוג השקית, המידה והצורך בפועל.
+            לפני הזמנה בודקים מה אורזים, איך השקית אמורה לשמש את העסק, איזו כמות נדרשת ומהי רמת המיתוג המתאימה.
           </p>
         </article>
 
@@ -1033,27 +1094,34 @@
 
     <section id="business" aria-labelledby="business-title">
       <div class="container">
-        <div class="content-card">
-          <p class="section-kicker">לעסקים, מוסדות ותעשייה</p>
-          <h2 id="business-title">מענה רחב יותר ממוצר אחד</h2>
+        <div class="clients-card">
+          <p class="section-kicker">לקוחות החברה</p>
+          <h2 id="business-title">בין לקוחותינו</h2>
           <p>
-            אנחנו עובדים עם לקוחות שצריכים אספקה עסקית ולא רכישה נקודתית קטנה.
-            בין לקוחות החברה ניתן למצוא גופים וחברות מוכרים, ובהם משרד הבריאות, כלמוביל, לובינסקי טרייד & ליס, אלבר, אל על, סמלת ועוד.
-            העבודה מול לקוחות כאלה דורשת סדר, זמינות, הבנה של כמויות והתאמה לסוג השימוש.
-          </p>
-          <p>
-            מעבר לשקיות האריזה, בגרון שיווק קיימים גם מוצרי ניילון לתעשייה, ניילון לאריזה, גליל ניילון תעשייתי, שרוולי ניילון, מוצרי ניילון לרכב ומוצרי נייר לתעשייה.
-            כך לקוחות שזקוקים לכמה פתרונות משלימים יכולים לקבל מענה רחב יותר במקום אחד.
+            עם לקוחות גרון שיווק נמנים גופים גדולים, חברות מסחריות, ארגונים, מוסדות ולקוחות מתחומי התעשייה, התחבורה, השירות והמסחר.
+            בין הלקוחות ניתן למצוא את אל־על נתיבי אוויר לישראל, קרסו מפיצי מכוניות, יוניברסל מוטורס ישראל, צ'מפיון מוטורס ישראל, זאפ גרופ, אלדן תחבורה, צה״ל, משטרת ישראל, התעשייה האווירית ועוד מאות לקוחות שונים.
           </p>
 
           <div class="clients" aria-label="דוגמאות ללקוחות">
-            <span class="client-pill">משרד הבריאות</span>
-            <span class="client-pill">כלמוביל</span>
-            <span class="client-pill">לובינסקי טרייד &amp; ליס</span>
-            <span class="client-pill">אלבר</span>
-            <span class="client-pill">אל על</span>
-            <span class="client-pill">סמלת</span>
+            <span class="client-pill">אל־על</span>
+            <span class="client-pill">קרסו</span>
+            <span class="client-pill">יוניברסל מוטורס ישראל</span>
+            <span class="client-pill">צ'מפיון מוטורס</span>
+            <span class="client-pill">זאפ גרופ</span>
+            <span class="client-pill">אלדן תחבורה</span>
+            <span class="client-pill">צה״ל</span>
+            <span class="client-pill">משטרת ישראל</span>
+            <span class="client-pill">התעשייה האווירית</span>
           </div>
+        </div>
+
+        <div class="content-card">
+          <p class="section-kicker">מוצרים נוספים</p>
+          <h2>פתרונות נוספים לעסקים ולתעשייה</h2>
+          <p>
+            לצד שקיות האריזה, אנחנו מספקים גם מוצרי ניילון לתעשייה, ניילון לאריזה, גליל ניילון תעשייתי, שרוולי ניילון, מוצרי ניילון לרכב ומוצרי נייר לתעשייה.
+            כך לקוחות שזקוקים לכמה פתרונות משלימים יכולים לקבל מענה רחב יותר במקום אחד.
+          </p>
 
           <div class="more-products" aria-label="מוצרים נוספים">
             <article class="mini-card">
@@ -1088,7 +1156,12 @@
 
           <div class="footer-actions" aria-label="כפתורי יצירת קשר">
             <a class="footer-btn" href="tel:0544343919" title="התקשרו לגרון שיווק">התקשרו</a>
-            <a class="footer-btn whatsapp" href="https://wa.me/972544343919" title="שליחת הודעת וואטסאפ לגרון שיווק">☘ וואטסאפ</a>
+            <a class="footer-btn whatsapp" href="https://wa.me/972544343919" title="שליחת הודעת וואטסאפ לגרון שיווק">
+              <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M16.02 3.2C9 3.2 3.3 8.82 3.3 15.75c0 2.22.6 4.38 1.72 6.28L3.2 28.8l6.95-1.78a12.86 12.86 0 0 0 5.87 1.43c7.02 0 12.72-5.62 12.72-12.55S23.04 3.2 16.02 3.2Zm0 23.11c-1.92 0-3.78-.5-5.42-1.46l-.39-.23-4.12 1.06 1.1-4.01-.26-.41a10.18 10.18 0 0 1-1.49-5.31c0-5.75 4.75-10.43 10.58-10.43S26.6 10.2 26.6 15.95 21.85 26.31 16.02 26.31Zm5.8-7.75c-.32-.16-1.9-.92-2.2-1.03-.3-.11-.52-.16-.74.16-.22.32-.85 1.03-1.04 1.24-.19.21-.38.24-.7.08-.32-.16-1.35-.49-2.58-1.55-.95-.84-1.6-1.88-1.78-2.2-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.22-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.74-1.76-1.02-2.41-.27-.63-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.39-.3.32-1.14 1.1-1.14 2.68s1.17 3.11 1.33 3.32c.16.21 2.3 3.47 5.58 4.87.78.33 1.39.53 1.86.68.78.24 1.5.21 2.06.13.63-.09 1.9-.77 2.17-1.51.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/>
+              </svg>
+              וואטסאפ
+            </a>
           </div>
         </section>
 
@@ -1142,7 +1215,11 @@
 
   <div class="floating-actions" aria-label="כפתורי יצירת קשר צפים">
     <a class="float-btn" href="tel:0544343919" title="התקשרו לגרון שיווק" aria-label="התקשרו לגרון שיווק">☎</a>
-    <a class="float-btn whatsapp" href="https://wa.me/972544343919" title="שליחת הודעת וואטסאפ לגרון שיווק" aria-label="שליחת הודעת וואטסאפ לגרון שיווק">☘</a>
+    <a class="float-btn whatsapp" href="https://wa.me/972544343919" title="שליחת הודעת וואטסאפ לגרון שיווק" aria-label="שליחת הודעת וואטסאפ לגרון שיווק">
+      <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M16.02 3.2C9 3.2 3.3 8.82 3.3 15.75c0 2.22.6 4.38 1.72 6.28L3.2 28.8l6.95-1.78a12.86 12.86 0 0 0 5.87 1.43c7.02 0 12.72-5.62 12.72-12.55S23.04 3.2 16.02 3.2Zm0 23.11c-1.92 0-3.78-.5-5.42-1.46l-.39-.23-4.12 1.06 1.1-4.01-.26-.41a10.18 10.18 0 0 1-1.49-5.31c0-5.75 4.75-10.43 10.58-10.43S26.6 10.2 26.6 15.95 21.85 26.31 16.02 26.31Zm5.8-7.75c-.32-.16-1.9-.92-2.2-1.03-.3-.11-.52-.16-.74.16-.22.32-.85 1.03-1.04 1.24-.19.21-.38.24-.7.08-.32-.16-1.35-.49-2.58-1.55-.95-.84-1.6-1.88-1.78-2.2-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.22-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.74-1.76-1.02-2.41-.27-.63-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.39-.3.32-1.14 1.1-1.14 2.68s1.17 3.11 1.33 3.32c.16.21 2.3 3.47 5.58 4.87.78.33 1.39.53 1.86.68.78.24 1.5.21 2.06.13.63-.09 1.9-.77 2.17-1.51.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/>
+      </svg>
+    </a>
   </div>
 
   <script>
